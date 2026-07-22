@@ -1,0 +1,228 @@
+/* ════════════════════════════════════════════
+   VICTORIA BOUTIQUE — blog.css
+   Long-form articles + blog index. Built on the
+   styles.css tokens; loaded only by blog pages.
+   IMPORTANT: bump ?v= in every page that links
+   this file whenever you edit it.
+   ════════════════════════════════════════════ */
+
+/* ── page shell (fixed transparent nav, no hero) ── */
+.blog-wrap {
+  padding: calc(var(--nav-h) + 3rem) 1.5rem 5rem;
+  max-width: 760px;
+  margin-inline: auto;
+}
+
+/* ── breadcrumbs ── */
+.crumbs {
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin-bottom: 2.2rem;
+}
+.crumbs a {
+  color: var(--charcoal-soft);
+  text-decoration: none;
+  border-bottom: 1px solid var(--gold-light);
+}
+.crumbs a:hover { color: var(--gold); border-bottom-color: var(--gold); }
+
+/* ── article header ── */
+.article-hero { text-align: center; margin-bottom: 2.4rem; }
+.article-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.9rem, 5vw, 2.9rem);
+  font-weight: 300;
+  line-height: 1.15;
+  color: var(--charcoal);
+  margin-top: 0.4rem;
+}
+.article-meta {
+  font-size: 0.68rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 1rem;
+}
+
+/* ── article image ── */
+.article-figure {
+  border: 1px solid var(--gold-light);
+  padding: 10px;
+  background: var(--ivory-dark);
+  margin: 0 0 2.4rem;
+}
+.article-figure img { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; }
+
+/* ── prose ── */
+.article { color: var(--charcoal-soft); }
+.article p {
+  font-size: 0.97rem;
+  font-weight: 300;
+  line-height: 1.95;
+  margin-bottom: 1.1rem;
+}
+.article .lead { font-size: 1.08rem; color: var(--charcoal); }
+.article h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.4rem, 3.5vw, 1.9rem);
+  font-weight: 400;
+  color: var(--charcoal);
+  margin: 2.6rem 0 1rem;
+  line-height: 1.25;
+}
+.article h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--charcoal);
+  margin: 1.8rem 0 0.7rem;
+}
+.article ul, .article ol { margin: 0 0 1.2rem 1.4rem; }
+.article li {
+  font-size: 0.95rem;
+  font-weight: 300;
+  line-height: 1.85;
+  margin-bottom: 0.45rem;
+}
+.article b, .article strong { font-weight: 500; color: var(--charcoal); }
+.article a { color: var(--gold-dark); text-decoration: none; border-bottom: 1px solid var(--gold-light); }
+.article a:hover { color: var(--gold); border-bottom-color: var(--gold); }
+
+/* ── tables (size guide) ── */
+.table-scroll { overflow-x: auto; margin: 0 0 1.4rem; }
+.article table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+  font-weight: 300;
+  min-width: 460px;
+}
+.article th {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.66rem;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  background: var(--ivory-dark);
+  padding: 0.65rem 0.8rem;
+  text-align: left;
+  border: 1px solid var(--gold-light);
+}
+.article td {
+  padding: 0.6rem 0.8rem;
+  border: 1px solid var(--gold-light);
+  color: var(--charcoal-soft);
+}
+
+/* ── CTA box ── */
+.cta-box {
+  background: var(--ivory-dark);
+  border: 1px solid var(--gold-light);
+  padding: 1.6rem 1.5rem;
+  margin: 2.4rem 0;
+  text-align: center;
+}
+.cta-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.35rem;
+  font-weight: 400;
+  color: var(--charcoal);
+  margin-bottom: 0.5rem;
+}
+.cta-box p { margin-bottom: 1.1rem; }
+.cta-actions { display: flex; gap: 0.7rem; justify-content: center; flex-wrap: wrap; }
+.blog-btn, .blog-btn-dark {
+  display: inline-block;
+  font-size: 0.66rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 0.85rem 1.7rem;
+  text-decoration: none;
+  border: none;
+  transition: background 0.3s, transform 0.2s;
+}
+.blog-btn { background: var(--gold); color: var(--ivory); }
+.blog-btn:hover { background: var(--gold-dark); transform: translateY(-2px); }
+.blog-btn-dark { background: var(--charcoal); color: var(--ivory); }
+.blog-btn-dark:hover { background: #000; transform: translateY(-2px); }
+
+/* ── FAQ accordion ── */
+.faq-block { margin: 2.2rem 0; }
+.faq-block details { border-top: 1px solid var(--gold-light); }
+.faq-block details:last-child { border-bottom: 1px solid var(--gold-light); }
+.faq-block summary {
+  cursor: pointer;
+  list-style: none;
+  position: relative;
+  padding: 0.9rem 2rem 0.9rem 0.1rem;
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: var(--charcoal);
+}
+.faq-block summary::-webkit-details-marker { display: none; }
+.faq-block summary::after {
+  content: "+";
+  position: absolute; right: 0.4rem; top: 50%; transform: translateY(-50%);
+  color: var(--gold-dark); font-size: 1.15rem; line-height: 1;
+}
+.faq-block details[open] summary::after { content: "–"; }
+.faq-block .faq-a { padding: 0 0.1rem 1rem; }
+.faq-block .faq-a p { margin-bottom: 0.5rem; font-size: 0.93rem; }
+
+/* ── related articles ── */
+.related { margin-top: 2.6rem; border-top: 1px solid var(--gold-light); padding-top: 1.6rem; }
+.related h2 { margin-top: 0; }
+.related ul { list-style: none; margin: 0.8rem 0 0; }
+.related li { margin-bottom: 0.6rem; }
+
+/* ════════════════════════
+   BLOG INDEX (blog.html)
+   ════════════════════════ */
+.blog-index-wrap {
+  padding: calc(var(--nav-h) + 3rem) 1.5rem 5rem;
+  max-width: 1100px;
+  margin-inline: auto;
+}
+.blog-head { text-align: center; max-width: 640px; margin: 0 auto 3rem; }
+.blog-head p.blog-lead { color: var(--charcoal-soft); font-weight: 300; margin-top: 1.2rem; line-height: 1.9; }
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.6rem;
+}
+.blog-card {
+  border: 1px solid var(--gold-light);
+  background: var(--ivory);
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+}
+.blog-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 36px rgba(201,168,76,0.14);
+  border-color: var(--gold);
+}
+.blog-card img { width: 100%; aspect-ratio: 3/2; object-fit: cover; display: block; }
+.blog-card-body { padding: 1.3rem 1.4rem 1.5rem; display: flex; flex-direction: column; gap: 0.55rem; flex: 1; }
+.blog-card-label {
+  font-size: 0.6rem; letter-spacing: 0.3em; text-transform: uppercase;
+  color: var(--gold); font-weight: 400;
+}
+.blog-card-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.35rem; font-weight: 400; line-height: 1.25; color: var(--charcoal);
+}
+.blog-card-excerpt { font-size: 0.87rem; font-weight: 300; line-height: 1.75; color: var(--charcoal-soft); flex: 1; }
+.blog-card-more {
+  font-size: 0.66rem; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--gold-dark); margin-top: 0.3rem;
+}
+
+@media (max-width: 560px) {
+  .blog-wrap, .blog-index-wrap { padding-inline: 1.1rem; }
+}
