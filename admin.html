@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Victoria Boutique · Administrimi i dyqanit</title>
+  <link rel="icon" type="image/jpeg" href="vik.jpeg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet" />
+  <!-- IMPORTANT: bump ?v= whenever you change the CSS or JS, or browsers keep the old copy -->
+  <link rel="stylesheet" href="shop-admin.css?v=2" />
+</head>
+<body class="admin-body">
+  <div class="admin-wrap">
+    <header class="admin-header">
+      <span class="brand-mark">Victoria<span class="brand-accent">Boutique</span> · Admin</span>
+      <button class="btn btn-dark btn-sm" id="logoutBtn" type="button" hidden>Dil</button>
+    </header>
+
+    <!-- ============ LOGIN ============ -->
+    <section class="admin-card" id="loginView">
+      <h2>Hyrje</h2>
+      <form id="loginForm">
+        <div class="admin-field">
+          <label for="loginUser">Përdoruesi</label>
+          <input type="text" id="loginUser" autocomplete="username" required />
+        </div>
+        <div class="admin-field">
+          <label for="loginPass">Fjalëkalimi</label>
+          <input type="password" id="loginPass" autocomplete="current-password" required />
+        </div>
+        <button class="btn btn-accent btn-sm" type="submit">Hyr</button>
+        <p class="admin-msg err" id="loginMsg">Emri ose fjalëkalimi është gabim.</p>
+      </form>
+    </section>
+
+    <!-- ============ DASHBOARD ============ -->
+    <div id="adminView" hidden>
+
+      <!-- ============ MANUAL (owner-facing, Albanian) ============ -->
+      <section class="admin-card admin-manual">
+        <h2>Si funksionon kjo faqe</h2>
+        <p class="admin-note">Këtu menaxhoni artikujt që shfaqen te faqja <b>“Dyqani”</b>.
+          Çdo ndryshim publikohet për të gjithë vizitorët brenda 1–2 minutash. Hapni një
+          temë më poshtë për udhëzimet.</p>
+
+        <details>
+          <summary>Çfarë është kjo faqe?</summary>
+          <div class="admin-manual-body">
+            <p>Ky është paneli i administrimit të dyqanit. Vetëm ju e përdorni; vizitorët
+              nuk e shohin. Nga këtu mund të <b>shtoni</b> artikuj të rinj, t'i
+              <b>ndryshoni</b> dhe t'i <b>hiqni</b>.</p>
+            <p>Emri dhe çmimi shfaqen në faqe <b>saktësisht siç i shkruani</b>. Çdo
+              artikull ka butonin e vet të WhatsApp-it: klienti që e shtyp ju shkruan
+              direkt për atë artikull.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Si të shtoni një artikull</summary>
+          <div class="admin-manual-body">
+            <ol>
+              <li>Te <b>“Shto artikull të ri”</b> shkruani emrin e artikullit.</li>
+              <li>Shkruani çmimin ashtu siç doni të duket në faqe (p.sh. <i>1.900 Lekë</i>).</li>
+              <li>Nëse doni, shtoni një <b>përshkrim të shkurtër</b> (opsional): material,
+                ngjyra, masa etj.</li>
+              <li>Zgjidhni një foto nga galeria (opsionale). Fotoja zvogëlohet vetë,
+                s'ka nevojë ta përgatisni.</li>
+              <li>Shtypni <b>“Shto dhe publiko”</b> dhe prisni mesazhin e gjelbër.</li>
+              <li>Pas 1–2 minutash artikulli duket te faqja “Dyqani”.</li>
+            </ol>
+          </div>
+        </details>
+
+        <details>
+          <summary>Si të hiqni një artikull (stok)</summary>
+          <div class="admin-manual-body">
+            <p>Heqja është e thjeshtë, vetëm një buton:</p>
+            <ol>
+              <li>Shkoni te lista <b>“Artikujt në shitje”</b> në krye të faqes.</li>
+              <li>Pranë artikullit që doni të hiqni, shtypni butonin e kuq <b>“Hiq”</b>.</li>
+              <li>Del një pyetje <i>“Ta heqim … nga dyqani?”</i>. Shtypni <b>OK</b> për ta
+                konfirmuar, ose <b>Anulo</b> nëse ndërroni mendje.</li>
+              <li>Prisni mesazhin e gjelbër <b>“U hoq!”</b>.</li>
+            </ol>
+            <p>Nuk ka “sasi” për çdo artikull: një artikull ose është në dyqan, ose jo.
+              Nëse ju duhet përsëri më vonë, thjesht shtojeni sërish.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Si të ndryshoni një artikull</summary>
+          <div class="admin-manual-body">
+            <ol>
+              <li>Te lista shtypni <b>“Ndrysho”</b> pranë artikullit. Fusha e mbushjes
+                hapet me të dhënat aktuale.</li>
+              <li>Ndryshoni emrin, çmimin ose përshkrimin sipas dëshirës.</li>
+              <li>Për foton: zgjidhni një foto të re vetëm nëse doni ta ndërroni. Nëse e
+                lini bosh, mbahet fotoja aktuale.</li>
+              <li>Shtypni <b>“Ruaj ndryshimet”</b> (ose <b>“Anulo”</b> për të dalë pa ruajtur).</li>
+            </ol>
+          </div>
+        </details>
+
+        <details>
+          <summary>Çelësi i publikimit: pse duhet?</summary>
+          <div class="admin-manual-body">
+            <p>Faqja ruhet në GitHub, dhe GitHub kërkon një <b>çelës</b> për të lejuar
+              ndryshime. Pa të, mund të hyni dhe të shihni listën, por s'mund të publikoni.</p>
+            <p>Çelësi vendoset <b>vetëm një herë për çdo pajisje</b> (telefon, kompjuter)
+              dhe ruhet vetëm në atë pajisje, jo në faqe. Skadon pas rreth një viti;
+              atëherë krijoni një të ri.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Si ta krijoni çelësin nga telefoni</summary>
+          <div class="admin-manual-body">
+            <p><b>E rëndësishme:</b> krijojeni në <b>shfletuesin</b> e telefonit
+              (Chrome ose Safari), <b>jo</b> te aplikacioni GitHub. Aplikacioni nuk e ka
+              këtë cilësim.</p>
+            <ol>
+              <li>Hapni <a href="https://github.com/settings/personal-access-tokens/new"
+                target="_blank" rel="noopener">faqen për të krijuar çelësin</a> dhe hyni në
+                llogari. Nëse ju kërkon të hapni aplikacionin GitHub, qëndroni te shfletuesi.</li>
+              <li>Te <b>Repository access</b> zgjidhni <b>Only select repositories</b> dhe
+                pastaj repozitorin e faqes.</li>
+              <li>Te <b>Permissions → Repository permissions → Contents</b> vendosni
+                <b>Read and write</b>. <b>Kujdes:</b> Read <b>and write</b>, jo vetëm
+                <i>Read</i>. Pa këtë, publikimi jep gabim.</li>
+              <li>Shtypni <b>Generate token</b> dhe <b>kopjoni</b> çelësin (shfaqet vetëm
+                një herë).</li>
+              <li>Kthehuni te kjo faqe, ngjiteni te kutia <b>“Çelësi i publikimit”</b> më
+                poshtë dhe shtypni <b>Ruaj çelësin</b>.</li>
+            </ol>
+          </div>
+        </details>
+
+        <details>
+          <summary>Probleme të zakonshme</summary>
+          <div class="admin-manual-body">
+            <ul>
+              <li><b>“Çelësi nuk pranohet nga GitHub”</b>: çelësi është shkruar gabim ose
+                ka skaduar. Krijoni një të ri.</li>
+              <li><b>“Çelësit i mungon leja për të shkruar”</b>: krijojeni sërish me
+                <b>Contents: Read and write</b>.</li>
+              <li><b>“Së pari vendosni çelësin e publikimit”</b>: kjo pajisje s'ka ende
+                çelës. Vendoseni një herë dhe nuk ju pyet më.</li>
+              <li><b>“Fotoja nuk mund të lexohet”</b>: provoni një foto tjetër (JPG ose PNG).</li>
+              <li><b>Ndryshimi s'duket në faqe</b>: prisni 1–2 minuta dhe rifreskojeni faqen.</li>
+            </ul>
+          </div>
+        </details>
+      </section>
+
+      <!-- ============ ITEM LIST ============ -->
+      <section class="admin-card">
+        <h2>Artikujt në shitje</h2>
+        <ul class="admin-items" id="itemList"></ul>
+        <p class="admin-empty" id="itemsEmpty" hidden>S'ka ende artikuj. Shtoni të parin më poshtë.</p>
+        <p class="admin-msg" id="listMsg"></p>
+      </section>
+
+      <!-- ============ ADD / EDIT FORM ============ -->
+      <section class="admin-card">
+        <h2 id="addCardTitle">Shto artikull të ri</h2>
+        <form id="addForm">
+          <div class="admin-field">
+            <label for="addName">Emri i artikullit</label>
+            <input type="text" id="addName" required maxlength="80" placeholder="p.sh. Fustan veror" />
+          </div>
+          <div class="admin-field">
+            <label for="addPrice">Çmimi</label>
+            <input type="text" id="addPrice" required maxlength="30" placeholder="p.sh. 2.500 Lekë" />
+          </div>
+          <div class="admin-field">
+            <label for="addDesc">Përshkrimi (opsional)</label>
+            <textarea id="addDesc" maxlength="500" rows="3" placeholder="p.sh. Pambuk, ngjyra: e bardhë, blu. Masa S–XL."></textarea>
+          </div>
+          <div class="admin-field">
+            <label for="addPhoto">Foto (opsionale)</label>
+            <input type="file" id="addPhoto" accept="image/*" />
+            <p class="admin-note" id="editPhotoHint" hidden>Lëreni bosh që të mbani foton aktuale.</p>
+            <img class="admin-photo-preview" id="photoPreview" alt="Parapamje e fotos" />
+          </div>
+          <div class="admin-form-actions">
+            <button class="btn btn-accent btn-sm" type="submit" id="addBtn">Shto dhe publiko</button>
+            <button class="btn btn-dark btn-sm" type="button" id="cancelEditBtn" hidden>Anulo</button>
+          </div>
+          <p class="admin-msg" id="addMsg"></p>
+        </form>
+      </section>
+
+      <!-- ============ PUBLISH KEY ============ -->
+      <section class="admin-card" id="tokenCard">
+        <h2>Çelësi i publikimit</h2>
+        <p class="admin-note">
+          Për të ruajtur ndryshimet në faqe nevojitet një çelës nga GitHub, vetëm një herë
+          për këtë pajisje. Çelësi ruhet vetëm në këtë shfletues. Mund ta bëni edhe nga
+          telefoni, te shfletuesi (jo aplikacioni GitHub).
+        </p>
+        <ol class="admin-steps">
+          <li><a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener"><b>Krijo çelës të ri</b></a> te GitHub (ose: <b>github.com</b> → Settings → Developer settings → Fine-grained personal access tokens → <b>Generate new token</b>).</li>
+          <li>Repository access: <b>Only select repositories</b> → zgjidhni repozitorin e faqes.</li>
+          <li>Permissions → Repository permissions → <b>Contents: Read and write</b>
+            (<b>Kujdes:</b> Read <b>and write</b>, jo vetëm Read).</li>
+          <li>Krijoni çelësin, kopjojeni dhe ngjiteni këtu poshtë.</li>
+        </ol>
+        <div class="admin-field">
+          <label for="tokenInput">Çelësi (token)</label>
+          <input type="password" id="tokenInput" autocomplete="off" placeholder="github_pat_…" />
+        </div>
+        <button class="btn btn-dark btn-sm" id="saveTokenBtn" type="button">Ruaj çelësin</button>
+        <p class="admin-msg" id="tokenMsg"></p>
+      </section>
+    </div>
+  </div>
+
+  <script src="admin.js?v=1"></script>
+</body>
+</html>
