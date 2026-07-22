@@ -34,9 +34,9 @@
          the prompt and see the (empty) dashboard. They still cannot publish anything
          without the GitHub token, which exists only in the owner's browser. The token
          is the real security; the password is for privacy of the screen. */
-  var SALT       = "PASTE-SALT-FROM-THE-TOOL";
+  var SALT       = "64c33859e7ff98f0abc5cd47bb522553";
   var ITERS      = 250000;
-  var LOGIN_HASH = "PASTE-HASH-FROM-THE-TOOL";
+  var LOGIN_HASH = "7df537475b88b2e2e7c1ad410c43889a835388040da76f9f137ee1d77c4cb686";
 
   /* (4) Storage keys - just make them unique per site so two sites on the same
          browser don't share a session/token. */
