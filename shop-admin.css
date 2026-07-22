@@ -1,0 +1,218 @@
+/* =========================================================
+   Victoria Boutique - styles for the SHOP page + ADMIN page.
+   Self-contained: drop this into any site. If you already have a design system,
+   you can delete the "tokens / base / buttons" block and keep the rest.
+   ========================================================= */
+
+/* ---------- tokens: rebrand the whole thing from here ---------- */
+:root {
+  --white: #FDFCF8;           /* site --ivory */
+  --cream: #F3F0E8;           /* site --ivory-dark */
+  --ink: #1A1A18;             /* site --charcoal */
+  --ink-soft: #3A3A36;        /* site --charcoal-soft */
+  --line: #E8D5A3;            /* site --gold-light */
+
+  --accent: #C9A84C;          /* site --gold */
+  --accent-dark: #A07830;     /* site --gold-dark */
+  --accent-grad: linear-gradient(135deg, #E8D5A3 0%, #C9A84C 45%, #A07830 100%);
+
+  --serif: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --sans: "Jost", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+
+  --maxw: 1180px;
+  --pad: clamp(1.1rem, 4vw, 2.5rem);
+  --radius: 0px;              /* the site uses sharp corners throughout */
+  --shadow-soft: 0 10px 30px -18px rgba(0, 0, 0, 0.35);
+}
+
+/* ---------- minimal base (delete if your site already has one) ---------- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--sans); color: var(--ink); background: var(--white); line-height: 1.65; }
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; text-decoration: none; }
+h1, h2, h3, h4 { font-family: var(--serif); font-weight: 400; line-height: 1.12; }
+.container { width: 100%; max-width: var(--maxw); margin-inline: auto; padding-inline: var(--pad); }
+.section { padding: clamp(3.5rem, 8vw, 6.5rem) 0; }
+.section-title { font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 300; }
+.section-lead { max-width: 46ch; margin: 1rem auto 0; color: var(--ink-soft); }
+.section-head { text-align: center; max-width: 720px; margin: 0 auto clamp(2rem, 5vw, 3.2rem); }
+.eyebrow { font-size: 0.62rem; letter-spacing: 0.4em; text-transform: uppercase;
+  color: var(--accent); font-weight: 400; margin-bottom: 0.9rem; }
+.brand-mark { font-family: var(--serif); font-size: 1.5rem; font-weight: 700; color: var(--ink); }
+.brand-accent { color: var(--accent); }
+
+/* ---------- buttons ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.55rem;
+  padding: 0.9rem 1.9rem; border-radius: 0;
+  font-family: var(--sans); font-weight: 400; font-size: 0.72rem;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  cursor: pointer; border: 1.5px solid transparent; white-space: nowrap;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, color 0.25s ease;
+}
+.btn-sm { padding: 0.65rem 1.2rem; font-size: 0.66rem; }
+.btn-accent { background: var(--accent); color: var(--white);
+  box-shadow: 0 12px 26px -14px rgba(201, 168, 76, 0.35); }
+.btn-dark { background: var(--ink); color: #fff; border-color: var(--ink); }
+@media (hover: hover) {
+  .btn-accent:hover { background: var(--accent-dark); transform: translateY(-2px); }
+  .btn-dark:hover { background: #000; transform: translateY(-2px); }
+}
+
+/* =========================================================
+   SHOP PAGE
+   ========================================================= */
+.shop-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: clamp(1.1rem, 2.5vw, 1.7rem);
+  align-items: start;   /* cards keep natural height instead of stretching to the tallest */
+}
+.card {
+  position: relative; background: var(--white);
+  border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden;
+  display: flex; flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+@media (hover: hover) {
+  .card:hover { transform: translateY(-6px); box-shadow: var(--shadow-soft);
+    border-color: rgba(201, 168, 76, 0.45); }
+  .card:hover .card-media img { transform: scale(1.06); }
+}
+.card-media { aspect-ratio: 1 / 1; overflow: hidden; background: #f2f2f2; }
+.card-media img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+.card-body { padding: 1.1rem 1.2rem 1.3rem; display: flex; flex-direction: column; gap: 0.4rem; }
+.card-body h3 { font-size: 1.25rem; }
+.shop-card .card-body { align-items: flex-start; }
+.shop-price { font-family: var(--serif); font-size: 1.1rem; font-weight: 600; color: var(--accent-dark); }
+.shop-order { margin-top: 0.4rem; }
+
+/* Description: clamped so a long text can never blow up a card; overflow-wrap keeps a
+   pasted long word/URL from spilling out. shop.js adds the toggle when it overflows. */
+.shop-desc {
+  font-size: 0.92rem; line-height: 1.5; color: var(--ink-soft);
+  white-space: pre-line; overflow-wrap: anywhere;
+  display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 4; overflow: hidden;
+}
+.shop-desc.expanded { display: block; -webkit-line-clamp: unset; overflow: visible; }
+.shop-desc-toggle {
+  align-self: flex-start; background: none; border: 0; padding: 0; cursor: pointer;
+  font: inherit; font-size: 0.85rem; font-weight: 600;
+  color: var(--accent-dark); text-decoration: underline;
+}
+@media (hover: hover) { .shop-desc-toggle:hover { color: var(--accent); } }
+
+/* search box (revealed by shop.js only when there are items) */
+.shop-search { max-width: 420px; margin: 0 auto clamp(1.5rem, 4vw, 2.4rem); }
+.shop-search input {
+  width: 100%; padding: 0.75rem 1.1rem;
+  border: 1px solid var(--line); border-radius: 0;
+  font: inherit; font-size: 16px;   /* >=16px so iOS doesn't zoom on focus */
+  background: var(--white);
+}
+.shop-search input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+.shop-noresults { text-align: center; color: var(--ink-soft); margin-top: 0.5rem; }
+/* REQUIRED: the plain [hidden] attribute can't beat .card's display:flex */
+.shop-card[hidden] { display: none; }
+
+/* "coming soon" note while the shop is empty */
+.shop-empty { text-align: center; max-width: 52ch; margin: 0 auto; padding: 0.5rem 0; }
+.shop-empty p { color: var(--ink-soft); margin-bottom: 1.5rem; }
+
+/* =========================================================
+   ADMIN PAGE
+   ========================================================= */
+.admin-body { background: var(--cream); min-height: 100vh; padding: clamp(1.2rem, 4vw, 3rem) var(--pad); }
+.admin-wrap { max-width: 760px; margin-inline: auto; }
+.admin-header { display: flex; align-items: center; justify-content: space-between;
+  gap: 1rem; margin-bottom: 1.6rem; }
+.admin-header .brand-mark { font-size: 1.35rem; }
+.admin-card {
+  background: var(--white); border: 1px solid var(--line); border-radius: var(--radius);
+  box-shadow: var(--shadow-soft); padding: clamp(1.2rem, 3vw, 1.8rem); margin-bottom: 1.4rem;
+}
+.admin-card h2 { font-size: 1.3rem; margin-bottom: 1rem; }
+.admin-field { margin-bottom: 1rem; }
+.admin-field label {
+  display: block; font-size: 0.82rem; font-weight: 600;
+  letter-spacing: 0.04em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 0.35rem;
+}
+.admin-field input[type="text"],
+.admin-field input[type="password"],
+.admin-field textarea {
+  width: 100%; padding: 0.7rem 0.9rem;
+  border: 1px solid var(--line); border-radius: 0;
+  font: inherit; font-size: 16px;   /* >=16px so iOS doesn't zoom on focus */
+  background: var(--white);
+}
+.admin-field textarea { resize: vertical; min-height: 84px; }
+.admin-field input:focus, .admin-field textarea:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+.admin-note { font-size: 0.88rem; color: var(--ink-soft); margin-bottom: 0.8rem; }
+.admin-steps { font-size: 0.88rem; color: var(--ink-soft); margin: 0 0 1rem 1.2rem; }
+.admin-steps li { margin-bottom: 0.3rem; }
+.admin-msg { font-size: 0.9rem; margin-top: 0.8rem; display: none; }
+.admin-msg.show { display: block; }
+.admin-msg.ok { color: #1c7c3c; }
+.admin-msg.err { color: #b3261e; }
+.admin-form-actions { display: flex; gap: 0.6rem; flex-wrap: wrap; align-items: center; }
+
+/* item rows */
+.admin-items { list-style: none; margin: 0; padding: 0; }
+.admin-item { display: flex; align-items: center; gap: 0.9rem; padding: 0.7rem 0;
+  border-top: 1px solid var(--line); }
+.admin-item:first-child { border-top: 0; }
+.admin-item img { width: 54px; height: 54px; object-fit: cover; border-radius: 0;
+  background: #f2f2f2; flex-shrink: 0; }
+.admin-item-info { flex: 1; min-width: 0; }
+.admin-item-name { font-weight: 600; overflow-wrap: anywhere; }
+.admin-item-price { font-size: 0.88rem; color: var(--accent-dark); }
+.admin-item-desc {
+  font-size: 0.85rem; color: var(--ink-soft); overflow-wrap: anywhere;
+  display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden;
+}
+.admin-item-actions { display: flex; flex-direction: column; gap: 0.4rem; flex-shrink: 0; }
+.admin-item-actions .btn { justify-content: center; }
+.btn-edit { background: #fff; border-color: var(--accent-dark); color: var(--accent-dark); }
+.btn-remove { background: #fff; border-color: #d8433a; color: #b3261e; }
+@media (hover: hover) {
+  .btn-edit:hover { background: var(--accent-dark); color: #fff; transform: translateY(-1px); }
+  .btn-remove:hover { background: #b3261e; color: #fff; transform: translateY(-1px); }
+}
+.admin-photo-preview { max-width: 140px; border-radius: 0; margin-top: 0.6rem; display: none; }
+.admin-photo-preview.show { display: block; }
+.admin-empty { color: var(--ink-soft); font-size: 0.92rem; padding: 0.4rem 0; }
+
+/* manual accordion */
+.admin-manual details { border-top: 1px solid var(--line); }
+.admin-manual summary {
+  cursor: pointer; padding: 0.75rem 1.8rem 0.75rem 0.2rem;
+  font-weight: 600; list-style: none; position: relative;
+}
+.admin-manual summary::-webkit-details-marker { display: none; }
+.admin-manual summary::after {
+  content: "+"; position: absolute; right: 0.5rem; top: 50%; transform: translateY(-50%);
+  color: var(--accent-dark); font-weight: 600; font-size: 1.15rem; line-height: 1;
+}
+.admin-manual details[open] summary::after { content: "–"; }
+@media (hover: hover) { .admin-manual summary:hover { color: var(--accent-dark); } }
+.admin-manual-body { padding: 0.1rem 0.2rem 0.95rem; font-size: 0.92rem; color: var(--ink-soft); }
+.admin-manual-body p { margin-bottom: 0.6rem; }
+.admin-manual-body p:last-child { margin-bottom: 0; }
+.admin-manual-body ol, .admin-manual-body ul { margin: 0 0 0.2rem 1.2rem; }
+.admin-manual-body li { margin-bottom: 0.4rem; }
+.admin-manual-body b { color: var(--ink); }
+/* links need re-styling because the global reset strips colour/underline */
+.admin-manual-body a, .admin-steps a, .admin-note a { color: var(--accent-dark); text-decoration: underline; }
+
+/* phone tuning */
+@media (max-width: 560px) {
+  .admin-body { padding: 1.1rem 0.9rem; }
+  .admin-header { margin-bottom: 1.1rem; }
+  .admin-header .brand-mark { font-size: 1.05rem; }   /* keep title + "Dil" on one line */
+  .admin-card { padding: 1.1rem 1rem; }
+  .admin-card h2 { font-size: 1.15rem; }
+  .admin-body .btn-sm { min-height: 44px; padding: 0.65rem 1.1rem; }  /* comfortable tap targets */
+  .admin-item { gap: 0.7rem; }
+  .admin-item img { width: 48px; height: 48px; }
+  .admin-manual summary { padding-block: 0.85rem; }
+}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Dyqani | Victoria Boutique Durrës</title>
+  <meta name="description" content="Artikujt që Victoria Boutique ka aktualisht në shitje. Veshje greke origjinale — porositni direkt në WhatsApp me dorëzim COD në të gjithë Shqipërinë." />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#C9A84C" />
+  <link rel="icon" type="image/jpeg" href="vik.jpeg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <!-- IMPORTANT: bump ?v= whenever you change the CSS or JS -->
+  <link rel="stylesheet" href="shop-admin.css?v=1" />
+  <style>
+    /* the fixed nav floats over content and this page has no hero */
+    .shop { padding-top: calc(var(--nav-h) + 3.5rem); }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGIMI (si te index.html; lidhjet kthehen te faqja kryesore) -->
+  <nav id="main-nav">
+    <a href="index.html" class="nav-logo">VICTORIA</a>
+
+    <button class="nav-toggle" id="nav-toggle" aria-label="Hap menunë">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html#about" class="nav-link">Historia</a></li>
+      <li><a href="index.html#collections" class="nav-link">Koleksionet</a></li>
+      <li><a href="shop.html" class="nav-link">Dyqani</a></li>
+      <li><a href="index.html#services" class="nav-link">Pse Ne</a></li>
+      <li><a href="index.html#contact" class="nav-link">Kontakt</a></li>
+    </ul>
+  </nav>
+
+  <!-- MOBIL MENU OVERLAY -->
+  <div class="mobile-menu-overlay" id="mobile-overlay"></div>
+
+  <section class="section shop">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Dyqani</p>
+        <h1 class="section-title">Artikuj në shitje</h1>
+        <p class="section-lead">Artikujt që kemi aktualisht në dyqan. Ju pëlqen diçka?
+          Porositeni direkt në WhatsApp.</p>
+      </div>
+
+      <!-- search: hidden until shop.js finds at least one item -->
+      <div class="shop-search" id="shopSearch" hidden>
+        <input type="search" id="shopSearchInput" placeholder="Kërko artikull..." aria-label="Kërko artikull" />
+      </div>
+
+      <!-- shop.js fills this -->
+      <div class="shop-grid"></div>
+
+      <p class="shop-noresults" id="shopNoResults" hidden>Asnjë artikull nuk përputhet me kërkimin.</p>
+
+      <!-- shown while the shop is empty; also the no-JS fallback -->
+      <div class="shop-empty" id="shopEmpty">
+        <p>Po e mbushim dyqanin online me artikuj të rinj. Kaloni më vonë, ose na
+          shkruani në WhatsApp dhe ju tregojmë çfarë kemi.</p>
+        <a class="btn btn-accent" href="https://wa.me/355695557373" target="_blank" rel="noopener">
+          Na shkruani në WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER (si te index.html) -->
+  <div class="meander meander-dark" role="presentation"></div>
+  <footer>
+    <div class="footer-logo">VICTORIA BOUTIQUE</div>
+    <div class="footer-copy">© <span id="footer-year">2026</span> Victoria Boutique &middot; Durrës, Shqipëri</div>
+    <div class="footer-socials">
+      <a href="https://www.instagram.com/victoria_boutique2012?igsh=MWZzcXU2d3pwM3V5aQ==" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="social-link">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        Instagram
+      </a>
+      <a href="https://www.facebook.com/ButiikVictoria/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="social-link">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        Facebook
+      </a>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script src="shop.js?v=1"></script>
+</body>
+</html>
