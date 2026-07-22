@@ -157,7 +157,8 @@
 
       // Success state
       formSubmit.disabled = true;
-      formSubmit.textContent = 'Dërguar ✓';
+      // label comes from data-sent-label so translated pages (/en/…) can localize it
+      formSubmit.textContent = formSubmit.dataset.sentLabel || 'Dërguar ✓';
       formSubmit.style.background = 'var(--gold)';
 
       if (formSuccess) {

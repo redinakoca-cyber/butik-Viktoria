@@ -7,7 +7,7 @@
   "use strict";
 
   var WA_BASE      = "https://wa.me/355695557373";   // Victoria Boutique WhatsApp
-  var FALLBACK_IMG = "vik.jpeg";                     // shown if a product photo is missing
+  var FALLBACK_IMG = "/vik.jpeg";                    // shown if a product photo is missing
 
   /* Per-language UI text. The page's <html lang="..."> picks the set; falls back to sq. */
   var STRINGS = {
@@ -37,7 +37,7 @@
   }
 
   /* ?ts= plus no-store: never render a stale product list (Pages/Cloudflare cache). */
-  fetch("data/products.json?ts=" + Date.now(), { cache: "no-store" })
+  fetch("/data/products.json?ts=" + Date.now(), { cache: "no-store" })
     .then(function (res) { return res.ok ? res.json() : null; })
     .then(function (data) {
       var products = (data && data.products) || [];
@@ -99,7 +99,11 @@
     var media = document.createElement("div");
     media.className = "card-media";
     var img = document.createElement("img");
-    img.src = p.image || FALLBACK_IMG;
+    /* stored paths are repo-relative ("assets/img/shop/…"); make them absolute so cards
+       also work from the /en/ (and future /it/) subpages */
+    var src = p.image || FALLBACK_IMG;
+    if (src.charAt(0) !== "/" && src.indexOf("http") !== 0) src = "/" + src;
+    img.src = src;
     img.alt = p.name;
     img.loading = "lazy";
     /* a just-published photo may not be deployed yet -> fall back instead of a broken icon */

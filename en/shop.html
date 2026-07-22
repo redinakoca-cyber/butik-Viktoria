@@ -1,23 +1,23 @@
 <!DOCTYPE html>
-<html lang="sq">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>Dyqani | Victoria Boutique Durrës</title>
-  <meta name="description" content="Artikujt që Victoria Boutique ka aktualisht në shitje. Veshje greke origjinale — porositni direkt në WhatsApp me dorëzim COD në të gjithë Shqipërinë." />
+  <title>Shop | Victoria Boutique Durrës</title>
+  <meta name="description" content="Items currently for sale at Victoria Boutique in Durrës. Original Greek fashion — order directly on WhatsApp with cash-on-delivery across Albania." />
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#C9A84C" />
-  <link rel="canonical" href="https://victoriaboutique.org/shop.html" />
+  <link rel="canonical" href="https://victoriaboutique.org/en/shop.html" />
   <link rel="alternate" hreflang="sq" href="https://victoriaboutique.org/shop.html" />
   <link rel="alternate" hreflang="en" href="https://victoriaboutique.org/en/shop.html" />
   <link rel="alternate" hreflang="x-default" href="https://victoriaboutique.org/shop.html" />
-  <link rel="icon" type="image/jpeg" href="vik.jpeg" />
+  <link rel="icon" type="image/jpeg" href="/vik.jpeg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="/styles.css" />
   <!-- IMPORTANT: bump ?v= whenever you change the CSS or JS -->
-  <link rel="stylesheet" href="shop-admin.css?v=3" />
+  <link rel="stylesheet" href="/shop-admin.css?v=3" />
   <style>
     /* the fixed nav floats over content and this page has no hero */
     .shop { padding-top: calc(var(--nav-h) + 3.5rem); }
@@ -25,62 +25,62 @@
 </head>
 <body>
 
-  <!-- NAVIGIMI (si te index.html; lidhjet kthehen te faqja kryesore) -->
+  <!-- NAV (same as the home page; links point back) -->
   <nav id="main-nav">
-    <a href="index.html" class="nav-logo">VICTORIA</a>
+    <a href="/en/" class="nav-logo">VICTORIA</a>
 
-    <button class="nav-toggle" id="nav-toggle" aria-label="Hap menunë">
+    <button class="nav-toggle" id="nav-toggle" aria-label="Open menu">
       <span></span><span></span><span></span>
     </button>
 
     <ul class="nav-links" id="nav-links">
-      <li><a href="index.html#about" class="nav-link">Historia</a></li>
-      <li><a href="index.html#collections" class="nav-link">Koleksionet</a></li>
-      <li><a href="shop.html" class="nav-link">Dyqani</a></li>
-      <li><a href="index.html#services" class="nav-link">Pse Ne</a></li>
-      <li><a href="index.html#contact" class="nav-link">Kontakt</a></li>
-      <li><a href="/en/shop.html" class="nav-link" lang="en">EN</a></li>
+      <li><a href="/en/#about" class="nav-link">Our Story</a></li>
+      <li><a href="/en/#collections" class="nav-link">Collections</a></li>
+      <li><a href="/en/shop.html" class="nav-link">Shop</a></li>
+      <li><a href="/en/#services" class="nav-link">Why Us</a></li>
+      <li><a href="/en/#contact" class="nav-link">Contact</a></li>
+      <li><a href="/shop.html" class="nav-link" lang="sq">SQ</a></li>
     </ul>
   </nav>
 
-  <!-- MOBIL MENU OVERLAY -->
+  <!-- MOBILE MENU OVERLAY -->
   <div class="mobile-menu-overlay" id="mobile-overlay"></div>
 
   <section class="section shop">
     <div class="container">
       <div class="section-head">
-        <p class="eyebrow">Dyqani</p>
-        <h1 class="section-title">Artikuj në shitje</h1>
-        <p class="section-lead">Artikujt që kemi aktualisht në dyqan. Ju pëlqen diçka?
-          Porositeni direkt në WhatsApp.</p>
+        <p class="eyebrow">Shop</p>
+        <h1 class="section-title">Items for sale</h1>
+        <p class="section-lead">The pieces we currently have in store. See something you love?
+          Order it directly on WhatsApp.</p>
       </div>
 
       <!-- search: hidden until shop.js finds at least one item -->
       <div class="shop-search" id="shopSearch" hidden>
-        <input type="search" id="shopSearchInput" placeholder="Kërko artikull..." aria-label="Kërko artikull" />
+        <input type="search" id="shopSearchInput" placeholder="Search items..." aria-label="Search items" />
       </div>
 
       <!-- shop.js fills this -->
       <div class="shop-grid"></div>
 
-      <p class="shop-noresults" id="shopNoResults" hidden>Asnjë artikull nuk përputhet me kërkimin.</p>
+      <p class="shop-noresults" id="shopNoResults" hidden>No items match your search.</p>
 
       <!-- shown while the shop is empty; also the no-JS fallback -->
       <div class="shop-empty" id="shopEmpty">
-        <p>Po e mbushim dyqanin online me artikuj të rinj. Kaloni më vonë, ose na
-          shkruani në WhatsApp dhe ju tregojmë çfarë kemi.</p>
+        <p>We are filling the online shop with new arrivals. Check back soon, or
+          message us on WhatsApp and we will tell you what is in store.</p>
         <a class="btn btn-accent" href="https://wa.me/355695557373" target="_blank" rel="noopener">
-          Na shkruani në WhatsApp
+          Message us on WhatsApp
         </a>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER (si te index.html) -->
+  <!-- FOOTER (same as the home page) -->
   <div class="meander meander-dark" role="presentation"></div>
   <footer>
     <div class="footer-logo">VICTORIA BOUTIQUE</div>
-    <div class="footer-copy">© <span id="footer-year">2026</span> Victoria Boutique &middot; Durrës, Shqipëri</div>
+    <div class="footer-copy">© <span id="footer-year">2026</span> Victoria Boutique &middot; Durrës, Albania</div>
     <div class="footer-socials">
       <a href="https://www.instagram.com/victoria_boutique2012?igsh=MWZzcXU2d3pwM3V5aQ==" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="social-link">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
@@ -93,7 +93,7 @@
     </div>
   </footer>
 
-  <script src="main.js?v=2"></script>
-  <script src="shop.js?v=2"></script>
+  <script src="/main.js?v=2"></script>
+  <script src="/shop.js?v=2"></script>
 </body>
 </html>
