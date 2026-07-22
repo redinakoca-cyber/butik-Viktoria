@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet" />
   <!-- IMPORTANT: bump ?v= whenever you change the CSS or JS, or browsers keep the old copy -->
-  <link rel="stylesheet" href="shop-admin.css?v=2" />
+  <link rel="stylesheet" href="shop-admin.css?v=3" />
 </head>
 <body class="admin-body">
   <div class="admin-wrap">
@@ -181,7 +181,10 @@
           </div>
           <div class="admin-field">
             <label for="addPhoto">Foto (opsionale)</label>
-            <input type="file" id="addPhoto" accept="image/*" />
+            <!-- native file input hidden: its "Choose File" text follows the browser's
+                 language, not the page's — the Albanian label-button below triggers it -->
+            <label for="addPhoto" class="btn btn-dark btn-sm">Zgjidh foto nga galeria</label>
+            <input type="file" id="addPhoto" accept="image/*" class="visually-hidden" />
             <p class="admin-note" id="editPhotoHint" hidden>Lëreni bosh që të mbani foton aktuale.</p>
             <img class="admin-photo-preview" id="photoPreview" alt="Parapamje e fotos" />
           </div>

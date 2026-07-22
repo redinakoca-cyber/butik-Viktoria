@@ -62,6 +62,20 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 400; line-height: 1.12;
    plain [hidden] attribute, so "Dil" showed before login and "Anulo" outside edit mode. */
 .btn[hidden] { display: none; }
 
+/* hides an element visually but keeps it in the layout tree (focusable, scriptable) —
+   used for the native file input, whose "Choose File" text ignores the page language */
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+
+/* the photo-picker label-button must escape .admin-field label's field-caption styling
+   (block width, grey colour, small caps) which otherwise outranks .btn-dark */
+.admin-field label.btn {
+  display: inline-flex; width: auto; color: #fff;
+  font-size: 0.66rem; font-weight: 400; letter-spacing: 0.2em; margin-bottom: 0;
+}
+
 /* =========================================================
    SHOP PAGE
    ========================================================= */
