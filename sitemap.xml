@@ -5,24 +5,42 @@
     <loc>https://victoriaboutique.org/</loc>
     <xhtml:link rel="alternate" hreflang="sq" href="https://victoriaboutique.org/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://victoriaboutique.org/en/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://victoriaboutique.org/it/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://victoriaboutique.org/" />
   </url>
   <url>
     <loc>https://victoriaboutique.org/en/</loc>
     <xhtml:link rel="alternate" hreflang="sq" href="https://victoriaboutique.org/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://victoriaboutique.org/en/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://victoriaboutique.org/it/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://victoriaboutique.org/" />
+  </url>
+  <url>
+    <loc>https://victoriaboutique.org/it/</loc>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://victoriaboutique.org/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://victoriaboutique.org/en/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://victoriaboutique.org/it/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://victoriaboutique.org/" />
   </url>
   <url>
     <loc>https://victoriaboutique.org/shop.html</loc>
     <xhtml:link rel="alternate" hreflang="sq" href="https://victoriaboutique.org/shop.html" />
     <xhtml:link rel="alternate" hreflang="en" href="https://victoriaboutique.org/en/shop.html" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://victoriaboutique.org/it/shop.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://victoriaboutique.org/shop.html" />
   </url>
   <url>
     <loc>https://victoriaboutique.org/en/shop.html</loc>
     <xhtml:link rel="alternate" hreflang="sq" href="https://victoriaboutique.org/shop.html" />
     <xhtml:link rel="alternate" hreflang="en" href="https://victoriaboutique.org/en/shop.html" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://victoriaboutique.org/it/shop.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://victoriaboutique.org/shop.html" />
+  </url>
+  <url>
+    <loc>https://victoriaboutique.org/it/shop.html</loc>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://victoriaboutique.org/shop.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://victoriaboutique.org/en/shop.html" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://victoriaboutique.org/it/shop.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://victoriaboutique.org/shop.html" />
   </url>
   <url>
