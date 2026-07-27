@@ -19,7 +19,15 @@
   <meta property="og:locale" content="it_IT" />
   <meta property="og:url" content="https://victoriaboutique.org/it/blog/guida-taglie/" />
   <meta property="og:image" content="https://victoriaboutique.org/vesh1.jpeg" />
-  <link rel="icon" type="image/jpeg" href="/vik.jpeg" />
+  <meta property="og:image:alt" content="Victoria Boutique — moda greca originale a Durazzo, Albania" />
+  <meta property="og:locale:alternate" content="sq_AL" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Guida alle taglie: ordina online sempre giusto" />
+  <meta name="twitter:description" content="Due minuti con il metro tolgono ogni pensiero: la guida alle taglie con tabella UE e consigli pratici della boutique." />
+  <meta name="twitter:image" content="https://victoriaboutique.org/vesh1.jpeg" />
+  <link rel="icon" type="image/png" sizes="any" href="/favicon.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet" />
@@ -36,8 +44,9 @@
     "datePublished": "2026-07-22",
     "dateModified": "2026-07-22",
     "author": { "@type": "Organization", "name": "Victoria Boutique" },
-    "publisher": { "@type": "Organization", "name": "Victoria Boutique", "url": "https://victoriaboutique.org/it/" },
-    "mainEntityOfPage": "https://victoriaboutique.org/it/blog/guida-taglie/"
+    "publisher": { "@type": "Organization", "@id": "https://victoriaboutique.org/#organization", "name": "Victoria Boutique", "url": "https://victoriaboutique.org/", "logo": { "@type": "ImageObject", "url": "https://victoriaboutique.org/vik.jpeg" } },
+    "mainEntityOfPage": "https://victoriaboutique.org/it/blog/guida-taglie/",
+    "speakable": { "@type": "SpeakableSpecification", "cssSelector": [".article-title", ".lead"] }
   }
   </script>
   <script type="application/ld+json">
@@ -103,7 +112,7 @@
     </header>
 
     <figure class="article-figure">
-      <img src="/vesh1.jpeg" alt="Scegliere la taglia giusta — Victoria Boutique" loading="lazy" />
+      <img src="/vesh1.jpeg" alt="Scegliere la taglia giusta — Victoria Boutique" fetchpriority="high" />
     </figure>
 
     <article class="article">

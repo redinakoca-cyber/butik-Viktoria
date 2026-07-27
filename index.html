@@ -5,9 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- ═══ SEO CORE ═══ -->
-  <title>Victoria Boutique Durrës | Veshje Greke Origjinale | COD Shqipëri</title>
+  <title>Victoria Boutique Durrës | Veshje Greke, COD Shqipëri</title>
   <meta name="description" content="Butiik i modës greke origjinale në Durrës, Shqipëri. Veshje të kuruar nga Greqia me dorëzim COD në të gjithë Shqipërinë. Aktiv që nga 2012. Porosit sot!" />
-  <meta name="keywords" content="butiik Durrës, veshje greke, rroba greke, COD Shqipëri, modë greke, butiik veshje Durrës, Victoria Boutique, dorëzim COD, veshje origjinale greke, rroba online Shqipëri" />
   <meta name="robots" content="index, follow" />
   <meta name="author" content="Victoria Boutique" />
   <meta name="theme-color" content="#C9A84C" />
@@ -29,53 +28,77 @@
   <meta property="og:locale" content="sq_AL" />
   <meta property="og:url" content="https://victoriaboutique.org/" />
   <meta property="og:image" content="https://victoriaboutique.org/vik.jpeg" />
+  <meta property="og:image:alt" content="Victoria Boutique — modë greke origjinale në Durrës, Shqipëri" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:locale:alternate" content="it_IT" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Victoria Boutique Durrës — Veshje Greke Origjinale" />
+  <meta name="twitter:description" content="Butiik i modës greke origjinale në Durrës. Veshje të kuruar nga Greqia, me dorëzim COD në të gjithë Shqipërinë. Aktiv që nga 2012." />
+  <meta name="twitter:image" content="https://victoriaboutique.org/vik.jpeg" />
 
-  <!-- ═══ STRUCTURED DATA — Google ClothingStore ═══ -->
+  <!-- ═══ STRUCTURED DATA — knowledge graph (LocalBusiness + WebSite) ═══ -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "ClothingStore",
-    "name": "Victoria Boutique",
-    "description": "Butiik i modës greke origjinale në Durrës, Shqipëri. Veshje greke të kuruar me kujdes, me dorëzim COD në të gjithë Shqipërinë. Themeluar në 2012.",
-    "foundingDate": "2012",
-    "telephone": "+355695557373",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Durrës",
-      "addressRegion": "Durrës",
-      "addressCountry": "AL"
-    },
-    "openingHoursSpecification": [
+    "@graph": [
       {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
-        "opens": "09:00",
-        "closes": "20:00"
+        "@type": "ClothingStore",
+        "@id": "https://victoriaboutique.org/#organization",
+        "name": "Victoria Boutique",
+        "description": "Butiik i modës greke origjinale në Durrës, Shqipëri. Veshje greke të kuruar me kujdes, me dorëzim COD në të gjithë Shqipërinë. Themeluar në 2012.",
+        "url": "https://victoriaboutique.org/",
+        "image": "https://victoriaboutique.org/vik.jpeg",
+        "foundingDate": "2012",
+        "telephone": "+355695557373",
+        "knowsLanguage": ["sq", "en", "it"],
+        "hasMap": "https://maps.apple/p/IDSv8ugBMDM_34",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Durrës",
+          "addressRegion": "Durrës",
+          "addressCountry": "AL"
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+            "opens": "09:00",
+            "closes": "20:00"
+          }
+        ],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+355695557373",
+          "contactType": "customer service",
+          "availableLanguage": ["sq", "en", "it"],
+          "areaServed": "AL"
+        },
+        "sameAs": [
+          "https://www.instagram.com/victoria_boutique2012",
+          "https://www.facebook.com/ButiikVictoria/"
+        ],
+        "priceRange": "$$",
+        "currenciesAccepted": "ALL",
+        "paymentAccepted": "Cash on Delivery",
+        "areaServed": [
+          { "@type": "Country", "name": "Albania" },
+          { "@type": "City", "name": "Durrës" }
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://victoriaboutique.org/#website",
+        "url": "https://victoriaboutique.org/",
+        "name": "Victoria Boutique",
+        "inLanguage": "sq",
+        "publisher": { "@id": "https://victoriaboutique.org/#organization" }
       }
-    ],
-    "sameAs": [
-      "https://www.instagram.com/victoria_boutique2012",
-      "https://www.facebook.com/ButiikVictoria/"
-    ],
-    "priceRange": "$$",
-    "currenciesAccepted": "ALL",
-    "paymentAccepted": "Cash on Delivery",
-    "areaServed": {
-      "@type": "Country",
-      "name": "Albania"
-    },
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Veshje Greke",
-      "itemListElement": [
-        { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Veshje Greke Origjinale" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Modë Greke Durrës" } }
-      ]
-    }
+    ]
   }
   </script>
 
-  <link rel="icon" type="image/jpeg" href="vik.jpeg" />
+  <link rel="icon" type="image/png" sizes="any" href="/favicon.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
   <!-- ═══ FONTS ═══ -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -127,6 +150,7 @@
       <p class="section-label">Historia Jonë</p>
       <h2 class="section-title">Mbi një dekadë stil të kuruar</h2>
       <div class="gold-line"></div>
+      <p><strong>Victoria Boutique është një butik veshjesh femërore në Durrës, Shqipëri, që sjell veshje greke origjinale me pagesë në dorëzim (COD) në të gjithë Shqipërinë që nga viti 2012.</strong></p>
       <p>Victoria Boutique lindi në vitin 2012 në zemër të Durrësit me një vizion të vetëm: të sjellë modën më të mirë greke drejtpërdrejt tek gratë shqiptare që vlerësojnë cilësinë, punimin dhe stilin.</p>
       <p>Çdo copë në koleksionin tonë zgjidhet me kujdes nga projektues dhe marka të besuar greke — veshje që festojnë femëroren, të punuara me kujdes dhe të dizajnuara për të jetuar përtej trendeve kalimtare.</p>
       <p>Nga eleganca e përditshme deri te veshjet e rasteve të veçanta, ofrojmë një garderobë të kuruar për çdo kapitull të historisë suaj.</p>

@@ -19,7 +19,15 @@
   <meta property="og:locale" content="sq_AL" />
   <meta property="og:url" content="https://victoriaboutique.org/blog/si-te-zgjidhni-masen/" />
   <meta property="og:image" content="https://victoriaboutique.org/vesh1.jpeg" />
-  <link rel="icon" type="image/jpeg" href="/vik.jpeg" />
+  <meta property="og:image:alt" content="Victoria Boutique — modë greke origjinale në Durrës, Shqipëri" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:locale:alternate" content="it_IT" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Si të zgjidhni masën e duhur kur porosisni online" />
+  <meta name="twitter:description" content="Dy minuta me metër shirit ju kursejnë çdo stres: udhëzuesi i masave me tabelë EU dhe këshilla praktike nga butiku." />
+  <meta name="twitter:image" content="https://victoriaboutique.org/vesh1.jpeg" />
+  <link rel="icon" type="image/png" sizes="any" href="/favicon.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet" />
@@ -36,8 +44,9 @@
     "datePublished": "2026-07-22",
     "dateModified": "2026-07-22",
     "author": { "@type": "Organization", "name": "Victoria Boutique" },
-    "publisher": { "@type": "Organization", "name": "Victoria Boutique", "url": "https://victoriaboutique.org/" },
-    "mainEntityOfPage": "https://victoriaboutique.org/blog/si-te-zgjidhni-masen/"
+    "publisher": { "@type": "Organization", "@id": "https://victoriaboutique.org/#organization", "name": "Victoria Boutique", "url": "https://victoriaboutique.org/", "logo": { "@type": "ImageObject", "url": "https://victoriaboutique.org/vik.jpeg" } },
+    "mainEntityOfPage": "https://victoriaboutique.org/blog/si-te-zgjidhni-masen/",
+    "speakable": { "@type": "SpeakableSpecification", "cssSelector": [".article-title", ".lead"] }
   }
   </script>
   <script type="application/ld+json">
@@ -47,18 +56,18 @@
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "Si t'i marr masat e trupit në shtëpi?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Ju duhen tre masa me metër shirit: gjoksi (pjesa më e plotë), beli (pjesa më e ngushtë) dhe vithet (pjesa më e plotë). Mbajeni metrin të puthitur por jo të shtrënguar, mbi të brendshme ose veshje të holla." }
+        "name": "Nuk kam metër shirit — si t'ia bëj?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Përdorni një kordon ose fjongo dhe mateni pastaj me vizore. Ose ejani në butik në Durrës — ju masim ne për pesë sekonda." }
       },
       {
         "@type": "Question",
-        "name": "Ç'masë evropiane (EU) më përshtatet?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Orientohuni nga tabela: p.sh. gjoks 88–92 cm dhe bel 70–74 cm i përgjigjet zakonisht masës EU 38 / M. Por masat ndryshojnë nga marka në markë — prandaj dërgojini masat tuaja në WhatsApp dhe ne i krahasojmë me artikullin konkret." }
+        "name": "A janë masat greke ndryshe nga ato evropiane?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Markat greke përdorin zakonisht sistemin EU ose S/M/L, por prerjet ndryshojnë. Prandaj krahasojmë gjithmonë masat tuaja me artikullin konkret, jo me tabelën e përgjithshme." }
       },
       {
         "@type": "Question",
-        "name": "Po nëse jam mes dy masave?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Varet nga prerja dhe materiali i artikullit: te modelet e lirshme zgjidhet masa më e vogël, te ato të puthitura shpesh më e madhja. Na pyesni për artikullin konkret — e kemi provuar vetë dhe ju themi sinqerisht." }
+        "name": "Po nëse masa që vjen nuk më bie mirë?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Na shkruani menjëherë në WhatsApp kur ta provoni — bashkë gjejmë zgjidhjen. Qëllimi ynë është që ta vishni, jo ta mbani në dollap." }
       }
     ]
   }
@@ -103,7 +112,7 @@
     </header>
 
     <figure class="article-figure">
-      <img src="/vesh1.jpeg" alt="Zgjedhja e masës së duhur — Victoria Boutique" loading="lazy" />
+      <img src="/vesh1.jpeg" alt="Zgjedhja e masës së duhur — Victoria Boutique" fetchpriority="high" />
     </figure>
 
     <article class="article">

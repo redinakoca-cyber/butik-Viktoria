@@ -5,9 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- ═══ SEO CORE ═══ -->
-  <title>Victoria Boutique Durazzo | Moda Greca Originale | Albania</title>
+  <title>Victoria Boutique Durazzo | Moda Greca, COD Albania</title>
   <meta name="description" content="Boutique di moda greca originale a Durazzo (Durrës), Albania. Capi selezionati dalla Grecia con pagamento alla consegna in tutta l'Albania. Dal 2012." />
-  <meta name="keywords" content="boutique Durazzo, moda greca Albania, abbigliamento donna Durazzo, vestiti greci, pagamento alla consegna Albania, Victoria Boutique, shopping Durazzo, moda greca originale" />
   <meta name="robots" content="index, follow" />
   <meta name="author" content="Victoria Boutique" />
   <meta name="theme-color" content="#C9A84C" />
@@ -29,55 +28,78 @@
   <meta property="og:locale" content="it_IT" />
   <meta property="og:url" content="https://victoriaboutique.org/it/" />
   <meta property="og:image" content="https://victoriaboutique.org/vik.jpeg" />
+  <meta property="og:image:alt" content="Victoria Boutique — moda greca originale a Durazzo, Albania" />
+  <meta property="og:locale:alternate" content="sq_AL" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Victoria Boutique Durazzo — Moda Greca Originale" />
+  <meta name="twitter:description" content="Boutique di moda greca originale a Durazzo. Capi selezionati dalla Grecia, con pagamento alla consegna in tutta l'Albania. Dal 2012." />
+  <meta name="twitter:image" content="https://victoriaboutique.org/vik.jpeg" />
 
-  <!-- ═══ STRUCTURED DATA — Google ClothingStore ═══ -->
+  <!-- ═══ STRUCTURED DATA — knowledge graph (LocalBusiness + WebSite) ═══ -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "ClothingStore",
-    "name": "Victoria Boutique",
-    "description": "Boutique di moda greca originale a Durazzo (Durrës), Albania. Abbigliamento greco selezionato con cura, con pagamento alla consegna in tutta l'Albania. Fondata nel 2012.",
-    "foundingDate": "2012",
-    "telephone": "+355695557373",
-    "url": "https://victoriaboutique.org/it/",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Durrës",
-      "addressRegion": "Durrës",
-      "addressCountry": "AL"
-    },
-    "openingHoursSpecification": [
+    "@graph": [
       {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
-        "opens": "09:00",
-        "closes": "20:00"
+        "@type": "ClothingStore",
+        "@id": "https://victoriaboutique.org/#organization",
+        "name": "Victoria Boutique",
+        "description": "Boutique di moda greca originale a Durazzo (Durrës), Albania. Abbigliamento greco selezionato con cura, con pagamento alla consegna in tutta l'Albania. Fondata nel 2012.",
+        "url": "https://victoriaboutique.org/",
+        "image": "https://victoriaboutique.org/vik.jpeg",
+        "foundingDate": "2012",
+        "telephone": "+355695557373",
+        "knowsLanguage": ["sq", "en", "it"],
+        "hasMap": "https://maps.apple/p/IDSv8ugBMDM_34",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Durrës",
+          "addressRegion": "Durrës",
+          "addressCountry": "AL"
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+            "opens": "09:00",
+            "closes": "20:00"
+          }
+        ],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+355695557373",
+          "contactType": "customer service",
+          "availableLanguage": ["sq", "en", "it"],
+          "areaServed": "AL"
+        },
+        "sameAs": [
+          "https://www.instagram.com/victoria_boutique2012",
+          "https://www.facebook.com/ButiikVictoria/"
+        ],
+        "priceRange": "$$",
+        "currenciesAccepted": "ALL",
+        "paymentAccepted": "Cash on Delivery",
+        "areaServed": [
+          { "@type": "Country", "name": "Albania" },
+          { "@type": "City", "name": "Durrës" }
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://victoriaboutique.org/#website",
+        "url": "https://victoriaboutique.org/",
+        "name": "Victoria Boutique",
+        "inLanguage": "it",
+        "publisher": { "@id": "https://victoriaboutique.org/#organization" }
       }
-    ],
-    "sameAs": [
-      "https://www.instagram.com/victoria_boutique2012",
-      "https://www.facebook.com/ButiikVictoria/"
-    ],
-    "priceRange": "$$",
-    "currenciesAccepted": "ALL",
-    "paymentAccepted": "Cash on Delivery",
-    "areaServed": {
-      "@type": "Country",
-      "name": "Albania"
-    },
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Moda Greca",
-      "itemListElement": [
-        { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Abbigliamento Greco Originale" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Moda Greca Durazzo" } }
-      ]
-    }
+    ]
   }
   </script>
 
   <!-- ═══ FONTS ═══ -->
-  <link rel="icon" type="image/jpeg" href="/vik.jpeg" />
+  <link rel="icon" type="image/png" sizes="any" href="/favicon.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet" />
@@ -127,6 +149,7 @@
       <p class="section-label">La Nostra Storia</p>
       <h2 class="section-title">Oltre un decennio di stile curato</h2>
       <div class="gold-line"></div>
+      <p><strong>Victoria Boutique è una boutique di moda femminile a Durazzo (Durrës), Albania, che vende abbigliamento greco originale con pagamento alla consegna (COD) in tutta l'Albania dal 2012.</strong></p>
       <p>Victoria Boutique è nata nel 2012 nel cuore di Durazzo con un'unica visione: portare il meglio della moda greca direttamente alle donne che apprezzano la qualità, l'artigianalità e lo stile.</p>
       <p>Ogni capo della nostra collezione è selezionato con cura da stilisti e marchi greci di fiducia — abiti che celebrano la femminilità, realizzati con cura e pensati per durare oltre le mode passeggere.</p>
       <p>Dall'eleganza di tutti i giorni agli abiti per le occasioni speciali, offriamo un guardaroba curato per ogni capitolo della vostra storia.</p>

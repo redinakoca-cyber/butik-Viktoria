@@ -5,9 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- ═══ SEO CORE ═══ -->
-  <title>Victoria Boutique Durrës | Original Greek Fashion | COD Albania</title>
+  <title>Victoria Boutique Durrës | Greek Fashion, COD Albania</title>
   <meta name="description" content="Boutique of original Greek fashion in Durrës, Albania. Carefully curated clothing from Greece with cash-on-delivery across Albania. Since 2012. Order today!" />
-  <meta name="keywords" content="boutique Durres, Greek fashion Albania, Greek clothing, women's clothing Durres, cash on delivery Albania, Greek style, shopping Durres, Victoria Boutique, original Greek fashion, clothes online Albania" />
   <meta name="robots" content="index, follow" />
   <meta name="author" content="Victoria Boutique" />
   <meta name="theme-color" content="#C9A84C" />
@@ -29,55 +28,78 @@
   <meta property="og:locale" content="en_US" />
   <meta property="og:url" content="https://victoriaboutique.org/en/" />
   <meta property="og:image" content="https://victoriaboutique.org/vik.jpeg" />
+  <meta property="og:image:alt" content="Victoria Boutique — original Greek fashion in Durrës, Albania" />
+  <meta property="og:locale:alternate" content="sq_AL" />
+  <meta property="og:locale:alternate" content="it_IT" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Victoria Boutique Durrës — Original Greek Fashion" />
+  <meta name="twitter:description" content="Boutique of original Greek fashion in Durrës. Carefully curated clothing from Greece, with cash-on-delivery across Albania. Since 2012." />
+  <meta name="twitter:image" content="https://victoriaboutique.org/vik.jpeg" />
 
-  <!-- ═══ STRUCTURED DATA — Google ClothingStore ═══ -->
+  <!-- ═══ STRUCTURED DATA — knowledge graph (LocalBusiness + WebSite) ═══ -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "ClothingStore",
-    "name": "Victoria Boutique",
-    "description": "Boutique of original Greek fashion in Durrës, Albania. Carefully curated Greek clothing with cash-on-delivery across Albania. Founded in 2012.",
-    "foundingDate": "2012",
-    "telephone": "+355695557373",
-    "url": "https://victoriaboutique.org/en/",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Durrës",
-      "addressRegion": "Durrës",
-      "addressCountry": "AL"
-    },
-    "openingHoursSpecification": [
+    "@graph": [
       {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
-        "opens": "09:00",
-        "closes": "20:00"
+        "@type": "ClothingStore",
+        "@id": "https://victoriaboutique.org/#organization",
+        "name": "Victoria Boutique",
+        "description": "Boutique of original Greek fashion in Durrës, Albania. Carefully curated Greek clothing with cash-on-delivery across Albania. Founded in 2012.",
+        "url": "https://victoriaboutique.org/",
+        "image": "https://victoriaboutique.org/vik.jpeg",
+        "foundingDate": "2012",
+        "telephone": "+355695557373",
+        "knowsLanguage": ["sq", "en", "it"],
+        "hasMap": "https://maps.apple/p/IDSv8ugBMDM_34",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Durrës",
+          "addressRegion": "Durrës",
+          "addressCountry": "AL"
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+            "opens": "09:00",
+            "closes": "20:00"
+          }
+        ],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+355695557373",
+          "contactType": "customer service",
+          "availableLanguage": ["sq", "en", "it"],
+          "areaServed": "AL"
+        },
+        "sameAs": [
+          "https://www.instagram.com/victoria_boutique2012",
+          "https://www.facebook.com/ButiikVictoria/"
+        ],
+        "priceRange": "$$",
+        "currenciesAccepted": "ALL",
+        "paymentAccepted": "Cash on Delivery",
+        "areaServed": [
+          { "@type": "Country", "name": "Albania" },
+          { "@type": "City", "name": "Durrës" }
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://victoriaboutique.org/#website",
+        "url": "https://victoriaboutique.org/",
+        "name": "Victoria Boutique",
+        "inLanguage": "en",
+        "publisher": { "@id": "https://victoriaboutique.org/#organization" }
       }
-    ],
-    "sameAs": [
-      "https://www.instagram.com/victoria_boutique2012",
-      "https://www.facebook.com/ButiikVictoria/"
-    ],
-    "priceRange": "$$",
-    "currenciesAccepted": "ALL",
-    "paymentAccepted": "Cash on Delivery",
-    "areaServed": {
-      "@type": "Country",
-      "name": "Albania"
-    },
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Greek Fashion",
-      "itemListElement": [
-        { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Original Greek Clothing" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Greek Fashion Durrës" } }
-      ]
-    }
+    ]
   }
   </script>
 
   <!-- ═══ FONTS ═══ -->
-  <link rel="icon" type="image/jpeg" href="/vik.jpeg" />
+  <link rel="icon" type="image/png" sizes="any" href="/favicon.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet" />
@@ -127,6 +149,7 @@
       <p class="section-label">Our Story</p>
       <h2 class="section-title">Over a decade of curated style</h2>
       <div class="gold-line"></div>
+      <p><strong>Victoria Boutique is a women's fashion boutique in Durrës, Albania, selling original Greek clothing with cash on delivery (COD) across all of Albania since 2012.</strong></p>
       <p>Victoria Boutique was born in 2012 in the heart of Durrës with a single vision: to bring the best of Greek fashion directly to women who value quality, craftsmanship and style.</p>
       <p>Every piece in our collection is carefully selected from trusted Greek designers and brands — clothing that celebrates femininity, made with care and designed to outlive passing trends.</p>
       <p>From everyday elegance to special-occasion wear, we offer a curated wardrobe for every chapter of your story.</p>

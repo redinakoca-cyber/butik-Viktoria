@@ -19,7 +19,15 @@
   <meta property="og:locale" content="sq_AL" />
   <meta property="og:url" content="https://victoriaboutique.org/blog/veshje-per-pushime-plazh/" />
   <meta property="og:image" content="https://victoriaboutique.org/vesh.jpeg" />
-  <link rel="icon" type="image/jpeg" href="/vik.jpeg" />
+  <meta property="og:image:alt" content="Victoria Boutique — modë greke origjinale në Durrës, Shqipëri" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:locale:alternate" content="it_IT" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Valixhja e pushimeve: veshjet për bregdetin 2026" />
+  <meta name="twitter:description" content="Lista e veshjeve që ju duhen vërtet për pushimet — nga plazhi në darkë — dhe si t'i porosisni me pagesë në dorëzim para nisjes." />
+  <meta name="twitter:image" content="https://victoriaboutique.org/vesh.jpeg" />
+  <link rel="icon" type="image/png" sizes="any" href="/favicon.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet" />
@@ -36,8 +44,9 @@
     "datePublished": "2026-07-22",
     "dateModified": "2026-07-22",
     "author": { "@type": "Organization", "name": "Victoria Boutique" },
-    "publisher": { "@type": "Organization", "name": "Victoria Boutique", "url": "https://victoriaboutique.org/" },
-    "mainEntityOfPage": "https://victoriaboutique.org/blog/veshje-per-pushime-plazh/"
+    "publisher": { "@type": "Organization", "@id": "https://victoriaboutique.org/#organization", "name": "Victoria Boutique", "url": "https://victoriaboutique.org/", "logo": { "@type": "ImageObject", "url": "https://victoriaboutique.org/vik.jpeg" } },
+    "mainEntityOfPage": "https://victoriaboutique.org/blog/veshje-per-pushime-plazh/",
+    "speakable": { "@type": "SpeakableSpecification", "cssSelector": [".article-title", ".lead"] }
   }
   </script>
   <script type="application/ld+json">
@@ -47,18 +56,18 @@
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "Çfarë veshjesh duhet të marr për një javë pushime në bregdet?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Mjaftojnë: dy fustane të lehta shumëfunksionale, një kominoshe ose fund liri, dy-tri bluza që kombinohen me gjithçka, një veshje më elegante për darkat, dhe një shall i hollë për mbrëmjet me erë." }
+        "name": "Sa veshje duhen për 7 ditë pushime?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Me listën e mësipërme — 8 deri 10 artikuj gjithsej ju veshin për çdo situatë, nga plazhi në darkat elegante." }
       },
       {
         "@type": "Question",
-        "name": "Cilat materiale janë më të mira për plazh dhe vapë?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Liri, pambuku dhe viskoza cilësore: thithin djersën, thahen shpejt dhe nuk ngjiten pas trupit. Janë materialet bazë të modës greke të verës." }
+        "name": "A arrin porosia para nisjes sime?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Porositni disa ditë përpara — dërgesat zakonisht mbërrijnë brenda pak ditësh pune. Na tregoni datën e nisjes në WhatsApp dhe jua themi realisht nëse arrihet." }
       },
       {
         "@type": "Question",
-        "name": "A arrin porosia para se të nisem për pushime?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Porositni disa ditë para nisjes: dërgesa me korrier zakonisht mbërrin brenda pak ditësh pune kudo në Shqipëri, dhe paguani vetëm kur e merrni paketën." }
+        "name": "Si të di masën pa e provuar veshjen?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Na dërgoni masat tuaja në WhatsApp — ose ndiqni udhëzuesin tonë të masave. Dy minuta punë, zero surpriza." }
       }
     ]
   }
@@ -103,7 +112,7 @@
     </header>
 
     <figure class="article-figure">
-      <img src="/vesh.jpeg" alt="Veshje verore për pushime nga Victoria Boutique" loading="lazy" />
+      <img src="/vesh.jpeg" alt="Veshje verore për pushime nga Victoria Boutique" fetchpriority="high" />
     </figure>
 
     <article class="article">

@@ -19,7 +19,15 @@
   <meta property="og:locale" content="en_US" />
   <meta property="og:url" content="https://victoriaboutique.org/en/blog/boutique-durres-albania/" />
   <meta property="og:image" content="https://victoriaboutique.org/vik.jpeg" />
-  <link rel="icon" type="image/jpeg" href="/vik.jpeg" />
+  <meta property="og:image:alt" content="Victoria Boutique — original Greek fashion in Durrës, Albania" />
+  <meta property="og:locale:alternate" content="sq_AL" />
+  <meta property="og:locale:alternate" content="it_IT" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="A clothing boutique in Durrës: where to find original Greek fashion" />
+  <meta name="twitter:description" content="Victoria Boutique in Durrës — hand-picked Greek fashion since 2012. Location, opening hours and what awaits you in store." />
+  <meta name="twitter:image" content="https://victoriaboutique.org/vik.jpeg" />
+  <link rel="icon" type="image/png" sizes="any" href="/favicon.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet" />
@@ -36,8 +44,9 @@
     "datePublished": "2026-07-22",
     "dateModified": "2026-07-22",
     "author": { "@type": "Organization", "name": "Victoria Boutique" },
-    "publisher": { "@type": "Organization", "name": "Victoria Boutique", "url": "https://victoriaboutique.org/en/" },
-    "mainEntityOfPage": "https://victoriaboutique.org/en/blog/boutique-durres-albania/"
+    "publisher": { "@type": "Organization", "@id": "https://victoriaboutique.org/#organization", "name": "Victoria Boutique", "url": "https://victoriaboutique.org/", "logo": { "@type": "ImageObject", "url": "https://victoriaboutique.org/vik.jpeg" } },
+    "mainEntityOfPage": "https://victoriaboutique.org/en/blog/boutique-durres-albania/",
+    "speakable": { "@type": "SpeakableSpecification", "cssSelector": [".article-title", ".lead"] }
   }
   </script>
   <script type="application/ld+json">
@@ -47,23 +56,23 @@
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "Where is Victoria Boutique in Durrës?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Victoria Boutique is in Durrës, Albania. Find the exact location on the map via our contact page, or message us on WhatsApp at +355 69 555 7373 and we'll guide you." }
+        "name": "Where exactly is the boutique?",
+        "acceptedAnswer": { "@type": "Answer", "text": "In Durrës — open the map here or message us on WhatsApp and we'll guide you precisely." }
       },
       {
         "@type": "Question",
-        "name": "What are the opening hours?",
-        "acceptedAnswer": { "@type": "Answer", "text": "We're open Monday to Saturday, 9:00 – 20:00." }
+        "name": "What are your opening hours?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Monday – Saturday, 9:00 – 20:00. We're closed on Sundays." }
       },
       {
         "@type": "Question",
-        "name": "Can I order without visiting the store?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Browse the pieces online and order on WhatsApp, with delivery across Albania and payment only at the door (COD)." }
+        "name": "Do you carry larger sizes?",
+        "acceptedAnswer": { "@type": "Answer", "text": "The selection changes constantly — message us on WhatsApp with your size and we'll send photos of what we currently have." }
       },
       {
         "@type": "Question",
-        "name": "What kind of clothing does Victoria Boutique carry?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Original Greek women's fashion: dresses for every occasion, blouses, skirts and elegant pieces — all hand-picked from trusted Greek brands." }
+        "name": "Can I order without coming to the store?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes — order on WhatsApp and pay only when the parcel reaches your door, anywhere in Albania." }
       }
     ]
   }
@@ -108,7 +117,7 @@
     </header>
 
     <figure class="article-figure">
-      <img src="/vik.jpeg" alt="The Victoria Boutique storefront in Durrës" loading="lazy" />
+      <img src="/vik.jpeg" alt="The Victoria Boutique storefront in Durrës" fetchpriority="high" />
     </figure>
 
     <article class="article">

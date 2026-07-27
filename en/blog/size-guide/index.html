@@ -19,7 +19,15 @@
   <meta property="og:locale" content="en_US" />
   <meta property="og:url" content="https://victoriaboutique.org/en/blog/size-guide/" />
   <meta property="og:image" content="https://victoriaboutique.org/vesh1.jpeg" />
-  <link rel="icon" type="image/jpeg" href="/vik.jpeg" />
+  <meta property="og:image:alt" content="Victoria Boutique — original Greek fashion in Durrës, Albania" />
+  <meta property="og:locale:alternate" content="sq_AL" />
+  <meta property="og:locale:alternate" content="it_IT" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Size guide: order the right fit online, every time" />
+  <meta name="twitter:description" content="Two minutes with a tape measure saves every worry: the size guide with an EU table and practical boutique advice." />
+  <meta name="twitter:image" content="https://victoriaboutique.org/vesh1.jpeg" />
+  <link rel="icon" type="image/png" sizes="any" href="/favicon.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet" />
@@ -36,8 +44,9 @@
     "datePublished": "2026-07-22",
     "dateModified": "2026-07-22",
     "author": { "@type": "Organization", "name": "Victoria Boutique" },
-    "publisher": { "@type": "Organization", "name": "Victoria Boutique", "url": "https://victoriaboutique.org/en/" },
-    "mainEntityOfPage": "https://victoriaboutique.org/en/blog/size-guide/"
+    "publisher": { "@type": "Organization", "@id": "https://victoriaboutique.org/#organization", "name": "Victoria Boutique", "url": "https://victoriaboutique.org/", "logo": { "@type": "ImageObject", "url": "https://victoriaboutique.org/vik.jpeg" } },
+    "mainEntityOfPage": "https://victoriaboutique.org/en/blog/size-guide/",
+    "speakable": { "@type": "SpeakableSpecification", "cssSelector": [".article-title", ".lead"] }
   }
   </script>
   <script type="application/ld+json">
@@ -47,18 +56,18 @@
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "How do I take my measurements at home?",
-        "acceptedAnswer": { "@type": "Answer", "text": "You need three tape measurements: bust (fullest part), waist (narrowest part) and hips (fullest part). Keep the tape snug but not tight, over underwear or thin clothing." }
+        "name": "I don't have a tape measure — what now?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Use a cord or ribbon and measure it against a ruler. Or drop by the boutique in Durrës — we'll measure you in five seconds." }
       },
       {
         "@type": "Question",
-        "name": "Which EU size fits me?",
-        "acceptedAnswer": { "@type": "Answer", "text": "As a guide: a bust of 88–92 cm and waist of 70–74 cm usually corresponds to EU 38 / M. But sizing varies between brands — send us your measurements on WhatsApp and we compare them against the actual garment." }
+        "name": "Are Greek sizes different from European ones?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Greek brands typically use EU or S/M/L sizing, but cuts vary. That's why we always compare your measurements against the specific garment, not a generic table." }
       },
       {
         "@type": "Question",
-        "name": "What if I'm between two sizes?",
-        "acceptedAnswer": { "@type": "Answer", "text": "It depends on the cut and fabric: for loose styles take the smaller size, for fitted styles often the larger. Ask us about the specific item — we've tried it ourselves and will tell you honestly." }
+        "name": "What if the size that arrives doesn't fit well?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Message us on WhatsApp as soon as you try it — we'll find a solution together. Our goal is that you wear it, not shelve it." }
       }
     ]
   }
@@ -103,7 +112,7 @@
     </header>
 
     <figure class="article-figure">
-      <img src="/vesh1.jpeg" alt="Choosing the right size — Victoria Boutique" loading="lazy" />
+      <img src="/vesh1.jpeg" alt="Choosing the right size — Victoria Boutique" fetchpriority="high" />
     </figure>
 
     <article class="article">

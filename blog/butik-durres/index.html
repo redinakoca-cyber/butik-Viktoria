@@ -19,7 +19,15 @@
   <meta property="og:locale" content="sq_AL" />
   <meta property="og:url" content="https://victoriaboutique.org/blog/butik-durres/" />
   <meta property="og:image" content="https://victoriaboutique.org/vik.jpeg" />
-  <link rel="icon" type="image/jpeg" href="/vik.jpeg" />
+  <meta property="og:image:alt" content="Victoria Boutique — modë greke origjinale në Durrës, Shqipëri" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:locale:alternate" content="it_IT" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Butik veshjesh në Durrës: ku ta gjeni modën greke origjinale" />
+  <meta name="twitter:description" content="Victoria Boutique në Durrës — modë greke e zgjedhur me dorë që nga 2012. Vendndodhja, orari dhe çfarë ju pret në dyqan." />
+  <meta name="twitter:image" content="https://victoriaboutique.org/vik.jpeg" />
+  <link rel="icon" type="image/png" sizes="any" href="/favicon.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet" />
@@ -36,8 +44,9 @@
     "datePublished": "2026-07-22",
     "dateModified": "2026-07-22",
     "author": { "@type": "Organization", "name": "Victoria Boutique" },
-    "publisher": { "@type": "Organization", "name": "Victoria Boutique", "url": "https://victoriaboutique.org/" },
-    "mainEntityOfPage": "https://victoriaboutique.org/blog/butik-durres/"
+    "publisher": { "@type": "Organization", "@id": "https://victoriaboutique.org/#organization", "name": "Victoria Boutique", "url": "https://victoriaboutique.org/", "logo": { "@type": "ImageObject", "url": "https://victoriaboutique.org/vik.jpeg" } },
+    "mainEntityOfPage": "https://victoriaboutique.org/blog/butik-durres/",
+    "speakable": { "@type": "SpeakableSpecification", "cssSelector": [".article-title", ".lead"] }
   }
   </script>
   <script type="application/ld+json">
@@ -47,23 +56,23 @@
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "Ku ndodhet Victoria Boutique në Durrës?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Victoria Boutique ndodhet në Durrës, Shqipëri. Vendndodhjen e saktë e gjeni në hartë nga faqja jonë e kontaktit, ose na shkruani në WhatsApp në +355 69 555 7373 dhe ju orientojmë." }
+        "name": "Ku ndodhet saktësisht butiku?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Në Durrës — hapni hartën këtu ose na shkruani në WhatsApp dhe ju orientojmë me saktësi." }
       },
       {
         "@type": "Question",
-        "name": "Çfarë orari ka butiku?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Jemi të hapur nga e hëna deri të shtunën, ora 09:00 – 20:00." }
+        "name": "Çfarë orari keni?",
+        "acceptedAnswer": { "@type": "Answer", "text": "E hënë – E shtunë, 09:00 – 20:00. Të dielën jemi të mbyllur." }
       },
       {
         "@type": "Question",
-        "name": "A mund të porosis edhe pa ardhur në dyqan?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Po. Artikujt i shikoni online dhe i porosisni në WhatsApp, me dërgesë në të gjithë Shqipërinë dhe pagesë vetëm në dorëzim (COD)." }
+        "name": "A mbani masa të mëdha?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Përzgjedhja ndryshon vazhdimisht — na shkruani në WhatsApp për masën tuaj dhe ju tregojmë me foto çfarë kemi aktualisht." }
       },
       {
         "@type": "Question",
-        "name": "Çfarë lloj veshjesh gjej te Victoria Boutique?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Veshje femërore greke origjinale: fustane për çdo rast, bluza, funde dhe veshje elegante — të gjitha të zgjedhura me dorë nga marka të besuara greke." }
+        "name": "A mund të porosis pa ardhur në dyqan?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Po — porosia bëhet në WhatsApp dhe paguani vetëm kur paketa mbërrin te dera juaj, kudo në Shqipëri." }
       }
     ]
   }
@@ -108,7 +117,7 @@
     </header>
 
     <figure class="article-figure">
-      <img src="/vik.jpeg" alt="Vitrina e Victoria Boutique në Durrës" loading="lazy" />
+      <img src="/vik.jpeg" alt="Vitrina e Victoria Boutique në Durrës" fetchpriority="high" />
     </figure>
 
     <article class="article">

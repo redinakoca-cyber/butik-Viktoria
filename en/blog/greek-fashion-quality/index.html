@@ -19,7 +19,15 @@
   <meta property="og:locale" content="en_US" />
   <meta property="og:url" content="https://victoriaboutique.org/en/blog/greek-fashion-quality/" />
   <meta property="og:image" content="https://victoriaboutique.org/vesh1.jpeg" />
-  <link rel="icon" type="image/jpeg" href="/vik.jpeg" />
+  <meta property="og:image:alt" content="Victoria Boutique — original Greek fashion in Durrës, Albania" />
+  <meta property="og:locale:alternate" content="sq_AL" />
+  <meta property="og:locale:alternate" content="it_IT" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Why Greek fashion: quality that outlasts fast fashion" />
+  <meta name="twitter:description" content="Fabric, seams, cut — how to recognise true quality, and why Greek clothing is worth every lek." />
+  <meta name="twitter:image" content="https://victoriaboutique.org/vesh1.jpeg" />
+  <link rel="icon" type="image/png" sizes="any" href="/favicon.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet" />
@@ -36,8 +44,9 @@
     "datePublished": "2026-07-22",
     "dateModified": "2026-07-22",
     "author": { "@type": "Organization", "name": "Victoria Boutique" },
-    "publisher": { "@type": "Organization", "name": "Victoria Boutique", "url": "https://victoriaboutique.org/en/" },
-    "mainEntityOfPage": "https://victoriaboutique.org/en/blog/greek-fashion-quality/"
+    "publisher": { "@type": "Organization", "@id": "https://victoriaboutique.org/#organization", "name": "Victoria Boutique", "url": "https://victoriaboutique.org/", "logo": { "@type": "ImageObject", "url": "https://victoriaboutique.org/vik.jpeg" } },
+    "mainEntityOfPage": "https://victoriaboutique.org/en/blog/greek-fashion-quality/",
+    "speakable": { "@type": "SpeakableSpecification", "cssSelector": [".article-title", ".lead"] }
   }
   </script>
   <script type="application/ld+json">
@@ -47,18 +56,18 @@
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "How do I tell a quality garment from a cheap one?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Check three things: the fabric (natural fibres or quality blends), the seams (dense, straight, no loose threads) and the cut (how it falls on the body, not how it hangs). If all three pass, the garment will last you years." }
+        "name": "How do you select for quality?",
+        "acceptedAnswer": { "@type": "Answer", "text": "We travel to Greece ourselves and every piece passes through our hands: fabric, seams, cut. What we wouldn't wear ourselves doesn't enter the shop." }
       },
       {
         "@type": "Question",
-        "name": "Why is Greek clothing considered high quality?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Greece has a long textile tradition and fashion built for the Mediterranean climate: natural breathing fabrics, cuts that fall beautifully, and workmanship that survives washing and time." }
+        "name": "Is everything you sell from Greece?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes — we've worked only with trusted Greek brands since 2012." }
       },
       {
         "@type": "Question",
-        "name": "Is it worth paying more for a quality garment?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Yes, if you count the cost per wear: a quality dress worn 50 times costs less per use than a cheap one that loses shape after three washes." }
+        "name": "How do I care for clothes so they last?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Follow the label, wash at low temperatures, and air-dry natural fibres — no tumble dryer. Simple care doubles the life of any garment." }
       }
     ]
   }
@@ -103,7 +112,7 @@
     </header>
 
     <figure class="article-figure">
-      <img src="/vesh1.jpeg" alt="Craftsmanship details in Greek clothing — Victoria Boutique" loading="lazy" />
+      <img src="/vesh1.jpeg" alt="Craftsmanship details in Greek clothing — Victoria Boutique" fetchpriority="high" />
     </figure>
 
     <article class="article">

@@ -19,7 +19,15 @@
   <meta property="og:locale" content="sq_AL" />
   <meta property="og:url" content="https://victoriaboutique.org/blog/pagesa-ne-dorezim-cod/" />
   <meta property="og:image" content="https://victoriaboutique.org/vesh2.jpeg" />
-  <link rel="icon" type="image/jpeg" href="/vik.jpeg" />
+  <meta property="og:image:alt" content="Victoria Boutique — modë greke origjinale në Durrës, Shqipëri" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:locale:alternate" content="it_IT" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Pagesa në dorëzim (COD): si funksionon dhe pse është e sigurt" />
+  <meta name="twitter:description" content="Pa kartë, pa parapagesë: paguani vetëm kur paketa është në duart tuaja. Udhëzuesi i plotë i porosisë me COD në Shqipëri." />
+  <meta name="twitter:image" content="https://victoriaboutique.org/vesh2.jpeg" />
+  <link rel="icon" type="image/png" sizes="any" href="/favicon.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet" />
@@ -36,8 +44,9 @@
     "datePublished": "2026-07-22",
     "dateModified": "2026-07-22",
     "author": { "@type": "Organization", "name": "Victoria Boutique" },
-    "publisher": { "@type": "Organization", "name": "Victoria Boutique", "url": "https://victoriaboutique.org/" },
-    "mainEntityOfPage": "https://victoriaboutique.org/blog/pagesa-ne-dorezim-cod/"
+    "publisher": { "@type": "Organization", "@id": "https://victoriaboutique.org/#organization", "name": "Victoria Boutique", "url": "https://victoriaboutique.org/", "logo": { "@type": "ImageObject", "url": "https://victoriaboutique.org/vik.jpeg" } },
+    "mainEntityOfPage": "https://victoriaboutique.org/blog/pagesa-ne-dorezim-cod/",
+    "speakable": { "@type": "SpeakableSpecification", "cssSelector": [".article-title", ".lead"] }
   }
   </script>
   <script type="application/ld+json">
@@ -47,23 +56,23 @@
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "Çfarë do të thotë pagesa në dorëzim (COD)?",
-        "acceptedAnswer": { "@type": "Answer", "text": "COD (Cash on Delivery) do të thotë që paguani vetëm në momentin kur korrieri ju sjell paketën — me para në dorë, te dera juaj. Asnjë parapagesë, asnjë kartë bankare, asnjë rrezik." }
+        "name": "A ka kosto shtesë pagesa në dorëzim?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Koston e plotë — artikull plus transport — jua themi të saktë në WhatsApp para se të nisim paketën. Asnjë shifër tjetër te dera." }
       },
       {
         "@type": "Question",
-        "name": "A duhet të paguaj diçka përpara se të vijë porosia?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Jo, asgjë. Porosia konfirmohet me mesazh në WhatsApp dhe e gjithë pagesa bëhet vetëm kur paketa është në duart tuaja." }
+        "name": "Po nëse nuk jam në shtëpi kur vjen korrieri?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Korrieri ju telefonon paraprakisht dhe koordinoni orarin ose një pikë tërheqjeje. Nëse dita nuk ju përshtatet, na shkruani dhe e riprogramojmë." }
       },
       {
         "@type": "Question",
-        "name": "Çfarë duhet të bëj kur korrieri sjell paketën?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Kontrolloni që paketa është e paprekur dhe që artikulli është ai që porositët. Nëse diçka nuk përputhet, na shkruani menjëherë në WhatsApp para se korrieri të largohet — e zgjidhim aty për aty." }
+        "name": "A mund ta hap paketën para se të paguaj?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Kontrolloni gjithmonë gjendjen e paketës dhe artikullin. Për çdo pasiguri, telefononi ose na shkruani aty për aty — jemi një mesazh larg." }
       },
       {
         "@type": "Question",
-        "name": "Në cilat qytete dërgoni me COD?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Në të gjithë Shqipërinë — Tiranë, Durrës, Vlorë, Elbasan, Shkodër, Fier, Korçë dhe kudo tjetër ku shkon korrieri. Dërgesa zakonisht mbërrin brenda pak ditësh pune." }
+        "name": "Në cilat qytete dërgoni?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Kudo në Shqipëri ku shkon korrieri — nga Shkodra në Sarandë. Dërgesa zakonisht mbërrin brenda pak ditësh pune." }
       }
     ]
   }
@@ -108,7 +117,7 @@
     </header>
 
     <figure class="article-figure">
-      <img src="/vesh2.jpeg" alt="Porosi me pagesë në dorëzim nga Victoria Boutique" loading="lazy" />
+      <img src="/vesh2.jpeg" alt="Porosi me pagesë në dorëzim nga Victoria Boutique" fetchpriority="high" />
     </figure>
 
     <article class="article">

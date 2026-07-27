@@ -19,7 +19,15 @@
   <meta property="og:locale" content="en_US" />
   <meta property="og:url" content="https://victoriaboutique.org/en/blog/cash-on-delivery-albania/" />
   <meta property="og:image" content="https://victoriaboutique.org/vesh2.jpeg" />
-  <link rel="icon" type="image/jpeg" href="/vik.jpeg" />
+  <meta property="og:image:alt" content="Victoria Boutique — original Greek fashion in Durrës, Albania" />
+  <meta property="og:locale:alternate" content="sq_AL" />
+  <meta property="og:locale:alternate" content="it_IT" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Cash on delivery (COD): how it works and why it's safe" />
+  <meta name="twitter:description" content="No card, no prepayment: you pay only when the parcel is in your hands. The complete guide to COD ordering in Albania." />
+  <meta name="twitter:image" content="https://victoriaboutique.org/vesh2.jpeg" />
+  <link rel="icon" type="image/png" sizes="any" href="/favicon.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet" />
@@ -36,8 +44,9 @@
     "datePublished": "2026-07-22",
     "dateModified": "2026-07-22",
     "author": { "@type": "Organization", "name": "Victoria Boutique" },
-    "publisher": { "@type": "Organization", "name": "Victoria Boutique", "url": "https://victoriaboutique.org/en/" },
-    "mainEntityOfPage": "https://victoriaboutique.org/en/blog/cash-on-delivery-albania/"
+    "publisher": { "@type": "Organization", "@id": "https://victoriaboutique.org/#organization", "name": "Victoria Boutique", "url": "https://victoriaboutique.org/", "logo": { "@type": "ImageObject", "url": "https://victoriaboutique.org/vik.jpeg" } },
+    "mainEntityOfPage": "https://victoriaboutique.org/en/blog/cash-on-delivery-albania/",
+    "speakable": { "@type": "SpeakableSpecification", "cssSelector": [".article-title", ".lead"] }
   }
   </script>
   <script type="application/ld+json">
@@ -47,23 +56,23 @@
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "What does cash on delivery (COD) mean?",
-        "acceptedAnswer": { "@type": "Answer", "text": "COD means you pay only at the moment the courier hands you the parcel — cash in hand, at your door. No prepayment, no bank card, no risk." }
+        "name": "Does cash on delivery cost extra?",
+        "acceptedAnswer": { "@type": "Answer", "text": "We tell you the full total — item plus shipping — on WhatsApp before the parcel ships. No other figure at the door." }
       },
       {
         "@type": "Question",
-        "name": "Do I have to pay anything before the order arrives?",
-        "acceptedAnswer": { "@type": "Answer", "text": "No, nothing. The order is confirmed by message on WhatsApp and the entire payment happens only when the parcel is in your hands." }
+        "name": "What if I'm not home when the courier comes?",
+        "acceptedAnswer": { "@type": "Answer", "text": "The courier calls ahead so you can agree on a time or a pickup point. If the day doesn't suit you, message us and we'll reschedule." }
       },
       {
         "@type": "Question",
-        "name": "What should I do when the courier arrives?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Check that the parcel is intact and that the item is the one you ordered. If anything doesn't match, message us immediately on WhatsApp before the courier leaves — we solve it on the spot." }
+        "name": "Can I open the parcel before paying?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Always check the parcel's condition and the item. For any doubt, call or message us on the spot — we're one message away." }
       },
       {
         "@type": "Question",
-        "name": "Which cities do you deliver to with COD?",
-        "acceptedAnswer": { "@type": "Answer", "text": "All of Albania — Tirana, Durrës, Vlora, Elbasan, Shkodra, Fier, Korça and anywhere else the courier goes. Delivery usually arrives within a few working days." }
+        "name": "Which cities do you deliver to?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Anywhere in Albania the courier goes — from Shkodra to Saranda. Delivery usually arrives within a few working days." }
       }
     ]
   }
@@ -108,7 +117,7 @@
     </header>
 
     <figure class="article-figure">
-      <img src="/vesh2.jpeg" alt="Cash on delivery order from Victoria Boutique" loading="lazy" />
+      <img src="/vesh2.jpeg" alt="Cash on delivery order from Victoria Boutique" fetchpriority="high" />
     </figure>
 
     <article class="article">
