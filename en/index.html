@@ -100,10 +100,21 @@
   <!-- ═══ FONTS ═══ -->
   <link rel="icon" type="image/png" sizes="any" href="/favicon.png" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/fonts/fonts.css" />
   <link rel="stylesheet" href="/styles.css" />
+  <link rel="stylesheet" href="/blog.css?v=1" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "Is it safe to order with cash on delivery?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. You pay only when the parcel reaches your door, in cash — no card and no prepayment. All the risk stays with us." } },
+      { "@type": "Question", "name": "Where do you deliver and how long does it take?", "acceptedAnswer": { "@type": "Answer", "text": "We deliver by courier across all of Albania, and orders usually arrive within a few working days." } },
+      { "@type": "Question", "name": "Which languages can I message you in?", "acceptedAnswer": { "@type": "Answer", "text": "We serve you in Albanian, English and Italian — message us in whichever language you prefer." } },
+      { "@type": "Question", "name": "How do I place an order?", "acceptedAnswer": { "@type": "Answer", "text": "Browse the items on the Shop page, tap the WhatsApp button, we confirm your size and address together, and you pay on delivery." } }
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -171,7 +182,7 @@
 
     <div class="about-visual reveal">
       <div class="about-frame">
-        <img src="/vik.jpeg" alt="Victoria Boutique Durrës — the store" class="about-img" loading="lazy" />
+        <picture><source srcset="/vik.webp" type="image/webp"><img src="/vik.jpeg" alt="Victoria Boutique Durrës — the store" class="about-img" loading="lazy" /></picture>
       </div>
       <div class="about-badge">
         <div class="badge-year">2012</div>
@@ -192,7 +203,7 @@
 
     <div class="collection-grid">
       <div class="collection-card reveal">
-        <img src="/vesh.jpeg" alt="Victoria Boutique collection" class="card-img" loading="lazy" />
+        <picture><source srcset="/vesh.webp" type="image/webp"><img src="/vesh.jpeg" alt="Victoria Boutique collection" class="card-img" loading="lazy" /></picture>
         <div class="card-corner"></div>
         <div class="card-overlay"></div>
         <div class="card-content">
@@ -202,7 +213,7 @@
       </div>
 
       <div class="collection-card reveal">
-        <img src="/vesh1.jpeg" alt="Victoria Boutique collection" class="card-img" loading="lazy" />
+        <picture><source srcset="/vesh1.webp" type="image/webp"><img src="/vesh1.jpeg" alt="Victoria Boutique collection" class="card-img" loading="lazy" /></picture>
         <div class="card-corner"></div>
         <div class="card-overlay"></div>
         <div class="card-content">
@@ -212,7 +223,7 @@
       </div>
 
       <div class="collection-card reveal">
-        <img src="/vesh2.jpeg" alt="Victoria Boutique collection" class="card-img" loading="lazy" />
+        <picture><source srcset="/vesh2.webp" type="image/webp"><img src="/vesh2.jpeg" alt="Victoria Boutique collection" class="card-img" loading="lazy" /></picture>
         <div class="card-corner"></div>
         <div class="card-overlay"></div>
         <div class="card-content">
@@ -255,6 +266,35 @@
   </section>
 
   <div class="meander" role="presentation"></div>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="reveal" style="text-align:center;">
+      <p class="section-label">Frequently Asked</p>
+      <h2 class="section-title">Everything you need to know</h2>
+      <div class="gold-line gold-line-center"></div>
+    </div>
+    <div class="faq-block" style="max-width:760px;margin:2.5rem auto 0;">
+      <details>
+        <summary>Is it safe to order with cash on delivery?</summary>
+        <div class="faq-a"><p>Yes. You pay only when the parcel reaches your door, in cash — no card and no prepayment. All the risk stays with us.</p></div>
+      </details>
+      <details>
+        <summary>Where do you deliver and how long does it take?</summary>
+        <div class="faq-a"><p>We deliver by courier across all of Albania, and orders usually arrive within a few working days.</p></div>
+      </details>
+      <details>
+        <summary>Which languages can I message you in?</summary>
+        <div class="faq-a"><p>We serve you in Albanian, English and Italian — message us in whichever language you prefer.</p></div>
+      </details>
+      <details>
+        <summary>How do I place an order?</summary>
+        <div class="faq-a"><p>Browse the items on the Shop page, tap the WhatsApp button, we confirm your size and address together, and you pay on delivery.</p></div>
+      </details>
+    </div>
+  </section>
+
+  <div class="meander meander-dark" role="presentation"></div>
 
   <!-- CONTACT -->
   <section id="contact">
@@ -364,6 +404,6 @@
     </div>
   </footer>
 
-  <script src="/main.js?v=2"></script>
+  <script src="/main.js?v=3"></script>
 </body>
 </html>
