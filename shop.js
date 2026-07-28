@@ -12,18 +12,30 @@
   /* Per-language UI text. The page's <html lang="..."> picks the set; falls back to sq. */
   var STRINGS = {
     sq: {
-      order: "Porosit në WhatsApp", more: "Lexo më shumë", less: "Lexo më pak",
+      order: "Porosit në WhatsApp", more: "Lexo më shumë", less: "Lexo më pak", all: "Të gjitha",
       message: function (p) { return "Përshëndetje Victoria Boutique, jam i/e interesuar për \"" + p.name + "\" (" + p.price + ")."; }
     },
     it: {
-      order: "Ordina su WhatsApp", more: "Leggi di più", less: "Leggi meno",
+      order: "Ordina su WhatsApp", more: "Leggi di più", less: "Leggi meno", all: "Tutti",
       message: function (p) { return "Salve Victoria Boutique, sono interessato/a a \"" + p.name + "\" (" + p.price + ")."; }
     },
     en: {
-      order: "Order on WhatsApp", more: "Read more", less: "Read less",
+      order: "Order on WhatsApp", more: "Read more", less: "Read less", all: "All",
       message: function (p) { return "Hello Victoria Boutique, I'm interested in \"" + p.name + "\" (" + p.price + ")."; }
     }
   };
+
+  /* Canonical category order (Albanian = the value stored in products.json) + per-language
+     display labels. Only the pill LABEL is translated; filtering keys on the Albanian value. */
+  var CATEGORIES = ["Fustane", "Bluze", "Funde", "Pantallona", "Të brendshme", "Pantofla", "Çanta", "Bizhu", "Syze"];
+  var CAT_LABELS = {
+    sq: null,
+    en: { "Fustane": "Dresses", "Bluze": "Tops", "Funde": "Skirts", "Pantallona": "Trousers", "Të brendshme": "Underwear", "Pantofla": "Slippers", "Çanta": "Bags", "Bizhu": "Jewellery", "Syze": "Sunglasses" },
+    it: { "Fustane": "Vestiti", "Bluze": "Top", "Funde": "Gonne", "Pantallona": "Pantaloni", "Të brendshme": "Intimo", "Pantofla": "Pantofole", "Çanta": "Borse", "Bizhu": "Bigiotteria", "Syze": "Occhiali" }
+  };
+
+  var activeCat = "all";
+  var searchQ = "";
 
   var grid  = document.querySelector(".shop-grid");
   var empty = document.getElementById("shopEmpty");
@@ -47,29 +59,65 @@
       /* the "coming soon" note is visible by default (works with JS off);
          hide it only once real items are on the page */
       if (grid.children.length && empty) empty.hidden = true;
-      if (grid.children.length) { setupSearch(); setupDescToggles(); }
+      if (grid.children.length) { buildFilters(products); setupSearch(); setupDescToggles(); }
     })
     .catch(function () { /* note stays visible */ });
 
-  /* Client-side search: all cards are already in the DOM, so just show/hide them.
-     NOTE: hiding needs the CSS rule `.shop-card[hidden]{display:none}` because the
-     card's own `display:flex` otherwise beats the plain [hidden] attribute. */
+  /* Combined filter: a card is shown when it matches BOTH the active category and the search.
+     Hiding needs `.shop-card[hidden]{display:none}` because the card's display:flex otherwise
+     beats the plain [hidden] attribute. */
+  function applyFilters() {
+    var visible = 0;
+    Array.prototype.forEach.call(grid.children, function (card) {
+      var catOk = activeCat === "all" || card.dataset.category === activeCat;
+      var qOk = !searchQ || (card.dataset.search || "").indexOf(searchQ) !== -1;
+      var show = catOk && qOk;
+      card.hidden = !show;
+      if (show) visible++;
+    });
+    var noResults = document.getElementById("shopNoResults");
+    if (noResults) noResults.hidden = visible !== 0;
+  }
+
   function setupSearch() {
     var box = document.getElementById("shopSearch");
     var input = document.getElementById("shopSearchInput");
-    var noResults = document.getElementById("shopNoResults");
     if (!box || !input) return;
     box.hidden = false;
     input.addEventListener("input", function () {
-      var q = norm(input.value.trim());
-      var visible = 0;
-      Array.prototype.forEach.call(grid.children, function (card) {
-        var match = !q || (card.dataset.search || "").indexOf(q) !== -1;
-        card.hidden = !match;
-        if (match) visible++;
-      });
-      if (noResults) noResults.hidden = !(q && visible === 0);
+      searchQ = norm(input.value.trim());
+      applyFilters();
     });
+  }
+
+  /* Build the category filter pills from the categories actually present in the products
+     (kept in canonical order), with "All" first. Labels are localised; the value stays Albanian. */
+  function buildFilters(products) {
+    var bar = document.getElementById("shopFilters");
+    if (!bar) return;
+    var present = {};
+    products.forEach(function (p) { if (p && p.category) present[p.category] = true; });
+    var cats = CATEGORIES.filter(function (c) { return present[c]; });
+    if (!cats.length) return;
+    var labels = CAT_LABELS[document.documentElement.lang] || CAT_LABELS.sq;
+    var pills = [{ v: "all", label: t.all }].concat(cats.map(function (c) {
+      return { v: c, label: (labels && labels[c]) || c };
+    }));
+    pills.forEach(function (item, i) {
+      var pill = document.createElement("button");
+      pill.type = "button";
+      pill.className = "shop-filter-pill" + (i === 0 ? " active" : "");
+      pill.textContent = item.label;
+      pill.setAttribute("data-cat", item.v);
+      pill.addEventListener("click", function () {
+        activeCat = item.v;
+        Array.prototype.forEach.call(bar.children, function (b) { b.classList.remove("active"); });
+        pill.classList.add("active");
+        applyFilters();
+      });
+      bar.appendChild(pill);
+    });
+    bar.hidden = false;
   }
 
   /* Descriptions are clamped to a few lines so cards stay tidy regardless of length.
@@ -93,8 +141,9 @@
   function buildCard(p) {
     var card = document.createElement("article");
     card.className = "card shop-card";
-    /* what the search box matches against */
-    card.dataset.search = norm(p.name + " " + (p.description || "") + " " + (p.price || ""));
+    card.dataset.category = p.category || "";
+    /* what the search box matches against (includes the category name) */
+    card.dataset.search = norm(p.name + " " + (p.description || "") + " " + (p.price || "") + " " + (p.category || ""));
 
     var media = document.createElement("div");
     media.className = "card-media";

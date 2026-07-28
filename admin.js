@@ -154,6 +154,12 @@
       price.textContent = p.price || "";
       info.appendChild(name);
       info.appendChild(price);
+      if (p.category) {
+        var cat = document.createElement("span");
+        cat.className = "admin-item-cat";
+        cat.textContent = p.category;
+        info.appendChild(cat);
+      }
       if (p.description) {
         var desc = document.createElement("div");
         desc.className = "admin-item-desc";
@@ -214,6 +220,7 @@
     editingId = p.id;
     $("addName").value = p.name || "";
     $("addPrice").value = p.price || "";
+    $("addCategory").value = p.category || "";
     $("addDesc").value = p.description || "";
     clearPreview();
     if (p.image) {
@@ -253,6 +260,7 @@
     var name = $("addName").value.trim();
     var price = $("addPrice").value.trim();
     var description = $("addDesc").value.trim();
+    var category = $("addCategory").value;
     if (!name || !price) return;
     if (!requireToken($("addMsg"))) return;
 
@@ -281,11 +289,13 @@
             /* keep the old photo when no new one was chosen */
             var u = { id: x.id, name: name, price: price, image: newImage || x.image || "" };
             if (description) u.description = description;   // omit when empty = tidy JSON
+            if (category) u.category = category;
             return u;
           });
         }
         var prod = { id: id, name: name, price: price, image: newImage };
         if (description) prod.description = description;
+        if (category) prod.category = category;
         list.push(prod);
         return list;
       }, (editing ? "Shop: edit \"" : "Shop: add \"") + name + "\"");

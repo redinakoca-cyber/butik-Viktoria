@@ -31,7 +31,7 @@
   <link rel="stylesheet" href="/assets/fonts/fonts.css" />
   <link rel="stylesheet" href="/styles.css" />
   <!-- IMPORTANT: bump ?v= whenever you change the CSS or JS -->
-  <link rel="stylesheet" href="/shop-admin.css?v=3" />
+  <link rel="stylesheet" href="/shop-admin.css?v=4" />
   <style>
     /* the fixed nav floats over content and this page has no hero */
     .shop { padding-top: calc(var(--nav-h) + 3.5rem); }
@@ -81,6 +81,9 @@
           Order it directly on WhatsApp.</p>
       </div>
 
+      <!-- category filters: filled by shop.js when categories exist -->
+      <div class="shop-filters" id="shopFilters" hidden></div>
+
       <!-- search: hidden until shop.js finds at least one item -->
       <div class="shop-search" id="shopSearch" hidden>
         <input type="search" id="shopSearchInput" placeholder="Search items..." aria-label="Search items" />
@@ -120,6 +123,6 @@
   </footer>
 
   <script src="/main.js?v=3"></script>
-  <script src="/shop.js?v=2"></script>
+  <script src="/shop.js?v=3"></script>
 </body>
 </html>

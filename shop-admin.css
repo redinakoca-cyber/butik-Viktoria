@@ -233,3 +233,34 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 400; line-height: 1.12;
   .admin-item img { width: 48px; height: 48px; }
   .admin-manual summary { padding-block: 0.85rem; }
 }
+
+/* =========================================================
+   CATEGORY FILTER PILLS (shop) + admin category select/badge
+   ========================================================= */
+.shop-filters {
+  display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center;
+  max-width: 900px; margin: 0 auto clamp(1.4rem, 4vw, 2.2rem);
+}
+.shop-filter-pill {
+  font-family: var(--sans); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 0.55rem 1.1rem; border-radius: 999px; cursor: pointer; white-space: nowrap;
+  background: var(--white); color: var(--ink-soft); border: 1px solid var(--line);
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+@media (hover: hover) { .shop-filter-pill:hover { border-color: var(--accent); color: var(--ink); transform: translateY(-1px); } }
+.shop-filter-pill.active { background: var(--ink); color: #fff; border-color: var(--ink); }
+.shop-filter-pill:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* admin: category <select> matches the text inputs */
+.admin-field select {
+  width: 100%; padding: 0.7rem 0.9rem; border: 1px solid var(--line); border-radius: 0;
+  font: inherit; font-size: 16px; background: var(--white); color: var(--ink);
+}
+.admin-field select:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+
+/* admin: small category badge in the item list */
+.admin-item-cat {
+  display: inline-block; margin-top: 0.25rem; font-size: 0.6rem; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--accent-dark);
+  border: 1px solid var(--line); border-radius: 999px; padding: 0.12rem 0.5rem;
+}

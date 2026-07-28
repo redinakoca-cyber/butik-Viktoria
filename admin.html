@@ -8,7 +8,7 @@
   <link rel="icon" type="image/jpeg" href="vik.jpeg" />
   <link rel="stylesheet" href="/assets/fonts/fonts.css" />
   <!-- IMPORTANT: bump ?v= whenever you change the CSS or JS, or browsers keep the old copy -->
-  <link rel="stylesheet" href="shop-admin.css?v=3" />
+  <link rel="stylesheet" href="shop-admin.css?v=4" />
 </head>
 <body class="admin-body">
   <div class="admin-wrap">
@@ -62,6 +62,9 @@
             <ol>
               <li>Te <b>“Shto artikull të ri”</b> shkruani emrin e artikullit.</li>
               <li>Shkruani çmimin ashtu siç doni të duket në faqe (p.sh. <i>1.900 Lekë</i>).</li>
+              <li>Zgjidhni <b>kategorinë</b> (p.sh. Fustane, Bluze, Çanta). Kjo i lejon klientët
+                të filtrojnë artikujt sipas llojit te faqja “Dyqani”. Është opsionale — nëse e
+                lini bosh, artikulli shfaqet vetëm te “Të gjitha”.</li>
               <li>Nëse doni, shtoni një <b>përshkrim të shkurtër</b> (opsional): material,
                 ngjyra, masa etj.</li>
               <li>Zgjidhni një foto nga galeria (opsionale). Fotoja zvogëlohet vetë,
@@ -94,7 +97,7 @@
             <ol>
               <li>Te lista shtypni <b>“Ndrysho”</b> pranë artikullit. Fusha e mbushjes
                 hapet me të dhënat aktuale.</li>
-              <li>Ndryshoni emrin, çmimin ose përshkrimin sipas dëshirës.</li>
+              <li>Ndryshoni emrin, çmimin, <b>kategorinë</b> ose përshkrimin sipas dëshirës.</li>
               <li>Për foton: zgjidhni një foto të re vetëm nëse doni ta ndërroni. Nëse e
                 lini bosh, mbahet fotoja aktuale.</li>
               <li>Shtypni <b>“Ruaj ndryshimet”</b> (ose <b>“Anulo”</b> për të dalë pa ruajtur).</li>
@@ -174,6 +177,21 @@
             <input type="text" id="addPrice" required maxlength="30" placeholder="p.sh. 2.500 Lekë" />
           </div>
           <div class="admin-field">
+            <label for="addCategory">Kategoria (opsionale)</label>
+            <select id="addCategory">
+              <option value="">— Zgjidhni kategorinë —</option>
+              <option>Fustane</option>
+              <option>Bluze</option>
+              <option>Funde</option>
+              <option>Pantallona</option>
+              <option>Të brendshme</option>
+              <option>Pantofla</option>
+              <option>Çanta</option>
+              <option>Bizhu</option>
+              <option>Syze</option>
+            </select>
+          </div>
+          <div class="admin-field">
             <label for="addDesc">Përshkrimi (opsional)</label>
             <textarea id="addDesc" maxlength="500" rows="3" placeholder="p.sh. Pambuk, ngjyra: e bardhë, blu. Masa S–XL."></textarea>
           </div>
@@ -219,6 +237,6 @@
     </div>
   </div>
 
-  <script src="admin.js?v=2"></script>
+  <script src="admin.js?v=3"></script>
 </body>
 </html>
