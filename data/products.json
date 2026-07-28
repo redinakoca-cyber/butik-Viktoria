@@ -1,3 +1,12 @@
 {
-  "products": []
+  "products": [
+    {
+      "id": "p-1785254766345",
+      "name": "Fustan Veror",
+      "price": "4500 Lekë",
+      "image": "assets/img/shop/p-1785254766345-1785254766492.jpg",
+      "description": "Vera në çdo detaj \nFustan i mesëm me stampë gjethesh të kuqe mbi bazë krem, jakë këmishe dhe rrip në bel që formon një hark elegant. Prerja e gjerë e fundit i jep lëvizje të lehtë me çdo hap, ndërsa xhepat anash e bëjnë praktik për ditë të gjata vere.\nIdeal për dreka nën diell, dalje mëngjesi në qytet, apo çdo moment ku doni thjeshtësi me karakter — femëror pa qenë i tepruar, elegant pa u munduar.",
+      "category": "Fustane"
+    }
+  ]
 }
