@@ -7,7 +7,7 @@
   "use strict";
 
   var WA_BASE      = "https://wa.me/355695557373";   // Victoria Boutique WhatsApp
-  var FALLBACK_IMG = "/vik.jpeg";                    // shown if a product photo is missing
+  var FALLBACK_IMG = "/media/window-dress-478.jpg";   // shown if a product photo is missing
 
   /* Per-language UI text. The page's <html lang="..."> picks the set; falls back to sq. */
   var STRINGS = {

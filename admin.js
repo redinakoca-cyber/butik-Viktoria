@@ -19,7 +19,7 @@
          containing exactly: {"products":[]}   and an empty folder assets/img/shop/ */
   var JSON_PATH    = "data/products.json";
   var PHOTO_DIR    = "assets/img/shop/";
-  var FALLBACK_IMG = "vik.jpeg";              // shown if a product photo is missing
+  var FALLBACK_IMG = "/media/window-dress-478.jpg";  // shown if a product photo is missing
 
   /* (3) Login. Generate these two lines with tools/password-hash.html (open it in a
          browser, type the username + password, copy the output over these lines).
