@@ -51,11 +51,11 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 400; line-height: 1.12;
   transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, color 0.25s ease;
 }
 .btn-sm { padding: 0.65rem 1.2rem; font-size: 0.66rem; }
-.btn-accent { background: var(--accent); color: var(--white);
+.btn-accent { background: var(--accent); color: var(--ink);   /* ink on gold = 7.6:1; white was 2.2:1 */
   box-shadow: 0 12px 26px -14px rgba(201, 168, 76, 0.35); }
 .btn-dark { background: var(--ink); color: #fff; border-color: var(--ink); }
 @media (hover: hover) {
-  .btn-accent:hover { background: var(--accent-dark); transform: translateY(-2px); }
+  .btn-accent:hover { background: var(--line); transform: translateY(-2px); }
   .btn-dark:hover { background: #000; transform: translateY(-2px); }
 }
 /* REQUIRED: same trap as .shop-card[hidden] below — .btn's display:inline-flex beats the
@@ -72,16 +72,31 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 400; line-height: 1.12;
 /* the photo-picker label-button must escape .admin-field label's field-caption styling
    (block width, grey colour, small caps) which otherwise outranks .btn-dark */
 .admin-field label.btn {
-  display: inline-flex; width: auto; color: #fff;
+  display: inline-flex; width: auto; color: var(--ink);
   font-size: 0.66rem; font-weight: 400; letter-spacing: 0.2em; margin-bottom: 0;
 }
 
 /* =========================================================
    SHOP PAGE
    ========================================================= */
+/* header band — the shop has no hero, so it used to start on a bare <h1> */
+.shop .section-head {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto clamp(2rem, 5vw, 3rem);
+  padding-bottom: clamp(1.5rem, 4vw, 2.2rem);
+  border-bottom: 1px solid var(--line);
+}
+.shop .section-head .eyebrow {
+  font-size: 0.62rem; letter-spacing: 0.4em; text-transform: uppercase;
+  color: var(--accent); margin-bottom: 0.8rem;
+}
+.shop .section-head .section-lead {
+  color: var(--ink-soft); font-weight: 300; margin-top: 1rem; line-height: 1.8;
+}
 .shop-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: clamp(1.1rem, 2.5vw, 1.7rem);
   align-items: start;   /* cards keep natural height instead of stretching to the tallest */
 }
@@ -96,13 +111,16 @@ h1, h2, h3, h4 { font-family: var(--serif); font-weight: 400; line-height: 1.12;
     border-color: rgba(201, 168, 76, 0.45); }
   .card:hover .card-media img { transform: scale(1.06); }
 }
-.card-media { aspect-ratio: 1 / 1; overflow: hidden; background: #f2f2f2; }
+.card-media { aspect-ratio: 3 / 4; overflow: hidden; background: var(--cream); }
 .card-media img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
 .card-body { padding: 1.1rem 1.2rem 1.3rem; display: flex; flex-direction: column; gap: 0.4rem; }
 .card-body h3 { font-size: 1.25rem; }
 .shop-card .card-body { align-items: flex-start; }
-.shop-price { font-family: var(--serif); font-size: 1.1rem; font-weight: 600; color: var(--accent-dark); }
-.shop-order { margin-top: 0.4rem; }
+.shop-price {
+  font-family: var(--serif); font-size: 1.45rem; font-weight: 600;
+  color: var(--ink); letter-spacing: 0.01em;
+}
+.shop-order { margin-top: 0.7rem; padding-top: 0.9rem; border-top: 1px solid var(--line); width: 100%; }
 
 /* Description: clamped so a long text can never blow up a card; overflow-wrap keeps a
    pasted long word/URL from spilling out. shop.js adds the toggle when it overflows. */

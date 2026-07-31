@@ -27,14 +27,14 @@
   <meta property="og:description" content="Boutique di moda greca originale a Durazzo. Capi selezionati dalla Grecia, con pagamento alla consegna in tutta l'Albania. Dal 2012." />
   <meta property="og:locale" content="it_IT" />
   <meta property="og:url" content="https://victoriaboutique.org/it/" />
-  <meta property="og:image" content="https://victoriaboutique.org/vik.jpeg" />
+  <meta property="og:image" content="https://victoriaboutique.org/media/og-victoria.jpg" />
   <meta property="og:image:alt" content="Victoria Boutique — moda greca originale a Durazzo, Albania" />
   <meta property="og:locale:alternate" content="sq_AL" />
   <meta property="og:locale:alternate" content="en_US" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Victoria Boutique Durazzo — Moda Greca Originale" />
   <meta name="twitter:description" content="Boutique di moda greca originale a Durazzo. Capi selezionati dalla Grecia, con pagamento alla consegna in tutta l'Albania. Dal 2012." />
-  <meta name="twitter:image" content="https://victoriaboutique.org/vik.jpeg" />
+  <meta name="twitter:image" content="https://victoriaboutique.org/media/og-victoria.jpg" />
 
   <!-- ═══ STRUCTURED DATA — knowledge graph (LocalBusiness + WebSite) ═══ -->
   <script type="application/ld+json">
@@ -47,7 +47,7 @@
         "name": "Victoria Boutique",
         "description": "Boutique di moda greca originale a Durazzo (Durrës), Albania. Abbigliamento greco selezionato con cura, con pagamento alla consegna in tutta l'Albania. Fondata nel 2012.",
         "url": "https://victoriaboutique.org/",
-        "image": "https://victoriaboutique.org/vik.jpeg",
+        "image": "https://victoriaboutique.org/media/og-victoria.jpg",
         "foundingDate": "2012",
         "telephone": "+355695557373",
         "knowsLanguage": ["sq", "en", "it"],
@@ -100,9 +100,11 @@
   <!-- ═══ FONTS ═══ -->
   <link rel="icon" type="image/png" sizes="any" href="/favicon.png" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="preload" as="image" href="/media/hero-poster.jpg" fetchpriority="high" />
+  <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/CormorantGaramond-300-normal-latin.woff2" crossorigin />
+  <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/Jost-300-normal-latin.woff2" crossorigin />
   <link rel="stylesheet" href="/assets/fonts/fonts.css" />
-  <link rel="stylesheet" href="/styles.css" />
-  <link rel="stylesheet" href="/blog.css?v=1" />
+  <link rel="stylesheet" href="/styles.css?v=20260731" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -144,11 +146,22 @@
   <!-- HERO -->
   <section id="hero">
     <div class="hero-bg-text" aria-hidden="true">VICTORIA</div>
+
     <div class="hero-inner">
       <p class="hero-eyebrow">Durazzo &middot; Dal 2012 &middot; Moda Greca</p>
       <h1 class="hero-title">Victoria<br><em>Boutique</em></h1>
+      <div class="hero-rule" role="presentation"></div>
       <p class="hero-subtitle">Eleganza greca selezionata &mdash; Durazzo, Albania</p>
-      <a href="#collections" class="hero-cta">Scopri la Collezione</a>
+      <div class="hero-actions">
+        <a href="#collections" class="hero-cta">Scopri la Collezione</a>
+        <a href="/it/shop.html" class="hero-cta hero-cta-ghost">Negozio</a>
+      </div>
+    </div>
+
+    <div class="hero-media">
+      <video class="hero-video" src="/media/hero.mp4" poster="/media/hero-poster.jpg"
+             autoplay muted loop playsinline preload="metadata"
+             disablepictureinpicture aria-hidden="true" tabindex="-1"></video>
     </div>
   </section>
 
@@ -182,7 +195,7 @@
 
     <div class="about-visual reveal">
       <div class="about-frame">
-        <picture><source srcset="/vik.webp" type="image/webp"><img src="/vik.jpeg" alt="Victoria Boutique Durazzo — il negozio" class="about-img" loading="lazy" /></picture>
+        <picture><source type="image/webp" srcset="/media/boutique-rack-360.webp 360w, /media/boutique-rack-492.webp 492w, /media/boutique-rack-738.webp 738w" sizes="(max-width: 900px) 92vw, 44vw"><img src="/media/boutique-rack-738.jpg" srcset="/media/boutique-rack-360.jpg 360w, /media/boutique-rack-492.jpg 492w, /media/boutique-rack-738.jpg 738w" sizes="(max-width: 900px) 92vw, 44vw" width="738" height="1314" alt="L'interno di Victoria Boutique a Durazzo — capi greci in negozio" class="about-img" fetchpriority="high" decoding="async" /></picture>
       </div>
       <div class="about-badge">
         <div class="badge-year">2012</div>
@@ -202,35 +215,35 @@
     </div>
 
     <div class="collection-grid">
-      <div class="collection-card reveal">
-        <picture><source srcset="/vesh.webp" type="image/webp"><img src="/vesh.jpeg" alt="Collezione Victoria Boutique" class="card-img" loading="lazy" /></picture>
+      <a class="collection-card reveal" href="/it/shop.html">
+        <picture><source type="image/webp" srcset="/media/outfit-linen-360.webp 360w, /media/outfit-linen-492.webp 492w, /media/outfit-linen-738.webp 738w" sizes="(max-width: 520px) 92vw, (max-width: 900px) 46vw, 31vw"><img src="/media/outfit-linen-738.jpg" srcset="/media/outfit-linen-360.jpg 360w, /media/outfit-linen-492.jpg 492w, /media/outfit-linen-738.jpg 738w" sizes="(max-width: 520px) 92vw, (max-width: 900px) 46vw, 31vw" width="738" height="1314" alt="Completo estivo in lino — camicia e pantaloni a righe" class="card-img" loading="lazy" decoding="async" /></picture>
         <div class="card-corner"></div>
         <div class="card-overlay"></div>
         <div class="card-content">
           <div class="card-title">La Collezione</div>
           <div class="card-sub">Victoria Boutique &middot; Durazzo</div>
         </div>
-      </div>
+      </a>
 
-      <div class="collection-card reveal">
-        <picture><source srcset="/vesh1.webp" type="image/webp"><img src="/vesh1.jpeg" alt="Collezione Victoria Boutique" class="card-img" loading="lazy" /></picture>
+      <a class="collection-card reveal" href="/it/shop.html">
+        <picture><source type="image/webp" srcset="/media/blouse-embroidered-360.webp 360w, /media/blouse-embroidered-492.webp 492w, /media/blouse-embroidered-738.webp 738w" sizes="(max-width: 520px) 92vw, (max-width: 900px) 46vw, 31vw"><img src="/media/blouse-embroidered-738.jpg" srcset="/media/blouse-embroidered-360.jpg 360w, /media/blouse-embroidered-492.jpg 492w, /media/blouse-embroidered-738.jpg 738w" sizes="(max-width: 520px) 92vw, (max-width: 900px) 46vw, 31vw" width="738" height="1600" alt="Blusa ricamata indossata su pantaloni di lino bianchi" class="card-img" loading="lazy" decoding="async" /></picture>
         <div class="card-corner"></div>
         <div class="card-overlay"></div>
         <div class="card-content">
           <div class="card-title">Moda Greca</div>
           <div class="card-sub">Originale &middot; Selezionata con Cura</div>
         </div>
-      </div>
+      </a>
 
-      <div class="collection-card reveal">
-        <picture><source srcset="/vesh2.webp" type="image/webp"><img src="/vesh2.jpeg" alt="Collezione Victoria Boutique" class="card-img" loading="lazy" /></picture>
+      <a class="collection-card reveal" href="/it/shop.html">
+        <picture><source type="image/webp" srcset="/media/window-dress-360.webp 360w, /media/window-dress-478.webp 478w" sizes="(max-width: 520px) 92vw, (max-width: 900px) 46vw, 31vw"><img src="/media/window-dress-478.jpg" srcset="/media/window-dress-360.jpg 360w, /media/window-dress-478.jpg 478w" sizes="(max-width: 520px) 92vw, (max-width: 900px) 46vw, 31vw" width="478" height="850" alt="Abito in raso nella vetrina di Victoria Boutique, Durazzo" class="card-img" loading="lazy" decoding="async" /></picture>
         <div class="card-corner"></div>
         <div class="card-overlay"></div>
         <div class="card-content">
           <div class="card-title">Il Nostro Stile</div>
           <div class="card-sub">Dal 2012 &middot; Eleganza</div>
         </div>
-      </div>
+      </a>
     </div>
   </section>
 
@@ -246,19 +259,19 @@
 
     <div class="services-grid">
       <div class="service-card reveal">
-        <div class="service-icon">🇬🇷</div>
+        <div class="service-icon" aria-hidden="true"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V3h18v18H9V9h6v6"/></svg></div>
         <div class="service-title">Moda Greca Originale</div>
         <p class="service-desc">Ogni articolo arriva direttamente dalla Grecia — marchi di fiducia con una reputazione per qualità, taglio ed eleganza mediterranea.</p>
       </div>
 
       <div class="service-card reveal">
-        <div class="service-icon">📦</div>
+        <div class="service-icon" aria-hidden="true"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 8v8a2 2 0 0 1-1 1.73l-7 4a2 2 0 0 1-2 0l-7-4A2 2 0 0 1 3 16V8a2 2 0 0 1 1-1.73l7-4a2 2 0 0 1 2 0l7 4A2 2 0 0 1 21 8z"/><path d="M3.3 7 12 12l8.7-5"/><path d="M12 22V12"/></svg></div>
         <div class="service-title">Pagamento alla Consegna (COD)</div>
         <p class="service-desc">Ordinate online e pagate quando il pacco arriva alla vostra porta. Niente carta, niente anticipo — solo la sicurezza del contrassegno in tutta l'Albania.</p>
       </div>
 
       <div class="service-card reveal">
-        <div class="service-icon">✨</div>
+        <div class="service-icon" aria-hidden="true"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.9 5.6L19.5 10.5l-5.6 1.9L12 18l-1.9-5.6L4.5 10.5l5.6-1.9L12 3z"/><path d="M18.5 15.5l.6 1.7 1.7.6-1.7.6-.6 1.7-.6-1.7-1.7-.6 1.7-.6z"/></svg></div>
         <div class="service-title">Selezionati a Mano</div>
         <p class="service-desc">Oltre 12 anni di esperienza significano che sappiamo cosa amano le nostre clienti. Ogni capo è scelto a mano per stile, qualità e comfort.</p>
       </div>
@@ -269,12 +282,12 @@
 
   <!-- DOMANDE FREQUENTI -->
   <section id="faq">
-    <div class="reveal" style="text-align:center;">
+    <div class="reveal section-head-center">
       <p class="section-label">Domande Frequenti</p>
       <h2 class="section-title">Tutto quello che dovete sapere</h2>
       <div class="gold-line gold-line-center"></div>
     </div>
-    <div class="faq-block" style="max-width:760px;margin:2.5rem auto 0;">
+    <div class="faq-block section-narrow">
       <details>
         <summary>È sicuro ordinare con pagamento alla consegna?</summary>
         <div class="faq-a"><p>Sì. Pagate solo quando il pacco arriva alla vostra porta, in contanti — senza carta e senza anticipo. Tutto il rischio resta a noi.</p></div>
@@ -306,7 +319,7 @@
 
       <div class="contact-detail-row">
         <div class="contact-detail">
-          <div class="detail-icon">📞</div>
+          <div class="detail-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.94.36 1.86.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.95.34 1.87.58 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
           <div>
             <div class="detail-label">Telefono / WhatsApp</div>
             <div class="detail-value">
@@ -317,7 +330,7 @@
           </div>
         </div>
         <div class="contact-detail">
-          <div class="detail-icon">📍</div>
+          <div class="detail-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
           <div>
             <div class="detail-label">Posizione</div>
             <div class="detail-value">
@@ -326,14 +339,14 @@
           </div>
         </div>
         <div class="contact-detail">
-          <div class="detail-icon">🕐</div>
+          <div class="detail-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15.5 14"/></svg></div>
           <div>
             <div class="detail-label">Orari di Apertura</div>
             <div class="detail-value">Lunedì – Sabato, 9:00 – 20:00</div>
           </div>
         </div>
         <div class="contact-detail">
-          <div class="detail-icon">🚚</div>
+          <div class="detail-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 3h15v13H1z"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
           <div>
             <div class="detail-label">Consegna</div>
             <div class="detail-value">COD &middot; In Tutta l'Albania</div>
@@ -356,7 +369,7 @@
       </div>
 
       <a href="https://maps.apple/p/IDSv8ugBMDM_34" target="_blank" rel="noopener noreferrer" class="map-directions-card">
-        <span class="map-dir-icon" aria-hidden="true">📍</span>
+        <span class="map-dir-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
         <div class="map-dir-text">
           <div class="map-dir-title">Indicazioni Stradali</div>
           <div class="map-dir-sub">Victoria Boutique · Durazzo, Albania</div>
@@ -381,8 +394,8 @@
           <label class="form-label" for="message">Messaggio</label>
           <textarea id="message" class="form-textarea" placeholder="Cosa state cercando?"></textarea>
         </div>
-        <button class="form-submit" id="form-submit" type="button" data-sent-label="Inviato ✓">Invia il Messaggio</button>
-        <p class="form-success" id="form-success">✓ Grazie! Vi risponderemo al più presto.</p>
+        <button class="form-submit" id="form-submit" type="button" data-sent-label="Inviato">Invia il Messaggio</button>
+        <p class="form-success" id="form-success"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 11"/></svg> Grazie! Vi risponderemo al più presto.</p>
       </div>
     </div>
   </section>
@@ -390,20 +403,53 @@
   <!-- FOOTER -->
   <div class="meander meander-dark" role="presentation"></div>
   <footer>
-    <div class="footer-logo">VICTORIA BOUTIQUE</div>
-    <div class="footer-copy">© <span id="footer-year">2026</span> Victoria Boutique &middot; Durazzo, Albania</div>
-    <div class="footer-socials">
-      <a href="https://www.instagram.com/victoria_boutique2012?igsh=MWZzcXU2d3pwM3V5aQ==" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="social-link">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-        Instagram
-      </a>
-      <a href="https://www.facebook.com/ButiikVictoria/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="social-link">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-        Facebook
-      </a>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo">VICTORIA BOUTIQUE</div>
+        <p class="footer-tagline">Moda greca originale a Durazzo, dal 2012.</p>
+        <div class="footer-socials">
+          <a href="https://www.instagram.com/victoria_boutique2012?igsh=MWZzcXU2d3pwM3V5aQ==" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="social-link"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>Instagram</a>
+          <a href="https://www.facebook.com/ButiikVictoria/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="social-link"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>Facebook</a>
+        </div>
+      </div>
+
+      <nav class="footer-col" aria-label="Link a piè di pagina">
+        <p class="footer-head">Pagine</p>
+        <ul>
+          <li><a href="/it/">Home</a></li>
+          <li><a href="/it/shop.html">Shop</a></li>
+          <li><a href="/it/blog.html">Blog</a></li>
+          <li><a href="/it/#about">La Nostra Storia</a></li>
+          <li><a href="/it/#contact">Contatti</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer-col">
+        <p class="footer-head">Contatti</p>
+        <ul>
+          <li><a href="tel:+355695557373">+355 69 555 7373</a></li>
+          <li><a href="https://wa.me/355695557373" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+          <li><a href="https://maps.apple/p/IDSv8ugBMDM_34" target="_blank" rel="noopener noreferrer">Durazzo, Albania</a></li>
+          <li>Lunedì – Sabato · 9:00 – 20:00</li>
+          <li>Pagamento alla consegna (COD)</li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <p class="footer-head">Lingua</p>
+        <ul>
+          <li><a href="/" lang="sq">Shqip</a></li>
+          <li><a href="/en/" lang="en">English</a></li>
+          <li><a href="/it/" lang="it">Italiano</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-base">
+      <div class="footer-copy">© <span id="footer-year">2026</span> Victoria Boutique &middot; Durazzo, Albania</div>
     </div>
   </footer>
 
-  <script src="/main.js?v=3"></script>
+  <script src="/main.js?v=20260731"></script>
 </body>
 </html>

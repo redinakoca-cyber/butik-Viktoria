@@ -16,6 +16,7 @@
   const overlay       = document.getElementById('mobile-overlay');
   const allNavLinks   = document.querySelectorAll('.nav-link');
   const heroBgText    = document.querySelector('.hero-bg-text');
+  const heroVideo     = document.querySelector('.hero-video');
   const revealEls     = document.querySelectorAll('.reveal');
   const formSubmit    = document.getElementById('form-submit');
   const formSuccess   = document.getElementById('form-success');
@@ -27,15 +28,18 @@
      1. NAV — scroll style
   ══════════════════════════════════════ */
   function onScroll() {
-    nav.classList.toggle('scrolled', window.scrollY > 60);
+    if (nav) nav.classList.toggle('scrolled', window.scrollY > 60);
   }
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll(); // run on load
 
   /* ══════════════════════════════════════
      2. MOBILE MENU — open / close
+     Guarded: a page without the nav markup used to throw here and kill
+     every feature below it, including the floating WhatsApp button.
   ══════════════════════════════════════ */
   function openMenu() {
+    if (!navToggle || !navLinks || !overlay) return;
     navToggle.classList.add('active');
     navLinks.classList.add('open');
     overlay.classList.add('active');
@@ -43,17 +47,20 @@
   }
 
   function closeMenu() {
+    if (!navToggle || !navLinks || !overlay) return;
     navToggle.classList.remove('active');
     navLinks.classList.remove('open');
     overlay.classList.remove('active');
     document.body.style.overflow = '';
   }
 
-  navToggle.addEventListener('click', () => {
-    navToggle.classList.contains('active') ? closeMenu() : openMenu();
-  });
+  if (navToggle) {
+    navToggle.addEventListener('click', () => {
+      navToggle.classList.contains('active') ? closeMenu() : openMenu();
+    });
+  }
 
-  overlay.addEventListener('click', closeMenu);
+  if (overlay) overlay.addEventListener('click', closeMenu);
 
   // Close menu when a nav link is clicked
   allNavLinks.forEach(link => {
@@ -67,14 +74,16 @@
 
   /* ══════════════════════════════════════
      3. HERO PARALLAX — bg text
+     Writes ONLY the offset as a custom property. CSS owns the transform,
+     so the ghost wordmark can be repositioned per breakpoint without the
+     first scroll event clobbering it.
   ══════════════════════════════════════ */
   let ticking = false;
 
   function applyParallax() {
-    if (!heroBgText) return;
-    const y = window.scrollY;
-    heroBgText.style.transform =
-      `translate(-50%, calc(-50% + ${y * 0.22}px))`;
+    if (heroBgText) {
+      heroBgText.style.setProperty('--parallax', (window.scrollY * 0.22) + 'px');
+    }
     ticking = false;
   }
 
@@ -84,6 +93,31 @@
       ticking = true;
     }
   }, { passive: true });
+
+  /* ══════════════════════════════════════
+     3b. HERO VIDEO — pause when off-screen
+     The homepage is mostly below the fold; decoding a looping video the
+     visitor cannot see burns battery and mobile data for nothing.
+  ══════════════════════════════════════ */
+  if (heroVideo && 'IntersectionObserver' in window) {
+    const playSafely = () => {
+      const p = heroVideo.play();
+      // A rejected autoplay promise is normal (iOS Low Power Mode), not an error.
+      if (p && typeof p.catch === 'function') p.catch(() => {});
+    };
+    new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) playSafely();
+        else heroVideo.pause();
+      });
+    }, { threshold: 0.05 }).observe(heroVideo);
+
+    // Also stop when the tab is hidden.
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) heroVideo.pause();
+      else if (heroVideo.getBoundingClientRect().bottom > 0) playSafely();
+    });
+  }
 
   /* ══════════════════════════════════════
      4. SCROLL REVEAL
@@ -158,7 +192,7 @@
       // Success state
       formSubmit.disabled = true;
       // label comes from data-sent-label so translated pages (/en/…) can localize it
-      formSubmit.textContent = formSubmit.dataset.sentLabel || 'Dërguar ✓';
+      formSubmit.textContent = formSubmit.dataset.sentLabel || 'Dërguar';
       formSubmit.style.background = 'var(--gold)';
 
       if (formSuccess) {
