@@ -288,11 +288,12 @@
       st.id = 'vb-extras-style';
       st.textContent = `
         .wa-float{position:fixed;right:18px;bottom:18px;z-index:120;width:58px;height:58px;
-          border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;
-          box-shadow:0 8px 24px rgba(0,0,0,.22);transition:transform .25s ease,box-shadow .25s ease;
+          border-radius:50%;background:#1A1A18;border:1px solid #C9A84C;display:flex;align-items:center;justify-content:center;
+          box-shadow:0 6px 22px rgba(26,26,24,.28);transition:transform .25s ease,box-shadow .25s ease;
           animation:waPop .4s .6s both;-webkit-tap-highlight-color:transparent}
-        .wa-float svg{width:32px;height:32px;fill:#fff}
-        .wa-float:hover{transform:translateY(-3px) scale(1.05);box-shadow:0 12px 30px rgba(0,0,0,.28)}
+        .wa-float svg{width:30px;height:30px;fill:#C9A84C}
+        .wa-float:hover{transform:translateY(-3px);background:#A85C3E;border-color:#A85C3E}
+        .wa-float:hover svg{fill:#F2EDE3}
         .wa-float:focus-visible{outline:3px solid #fff;outline-offset:3px}
         @keyframes waPop{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:scale(1)}}
         .vb-skip{position:absolute;left:-999px;top:0;z-index:300;background:#1A1A18;color:#fff;

@@ -31,6 +31,27 @@
   --charcoal-rgb: 26 26 24;
   --ivory-rgb:    253 252 248;
 
+  /* ─── GREEK PALETTE (added, never replacing) ───
+     The old page was ivory + gold, which is the house style of every "luxury"
+     template on the internet — the owner's words for it were "gjenerike".
+     These are not invented: each is sampled from the shop's OWN photographs, so
+     the page and the clothes finally belong to the same world.
+       --clay   the terracotta wall behind the cream shirt-dress (dress-shop)
+       --olive  the greenery and the muted linen stripe (linen-top, rack-rail)
+       --stone  limewash — a Mediterranean wall, warmer than the old ivory
+     Gold stays exactly as it was and keeps its job, but a smaller one: a
+     hairline and a serif accent, never a field of it. */
+  --clay:        #A85C3E;
+  --clay-deep:   #7E4029;
+  --clay-wash:   #F0E2D9;
+  --olive:       #6B7057;
+  --olive-deep:  #4A4E3B;
+  --stone:       #F2EDE3;
+  --stone-deep:  #E4DBCA;
+  --clay-rgb:    168 92 62;
+  --olive-rgb:   107 112 87;
+  --stone-rgb:   242 237 227;
+
   /* type — fluid ramp */
   --fs-100:     0.62rem;                                /* micro labels */
   --fs-200:     0.68rem;                                /* eyebrow / meta */
@@ -237,16 +258,17 @@ video:focus-visible {
 }
 
 /* ══════════════════════
-   HERO
-   ONE <video> element, repositioned by CSS — never two, which would
-   download the file twice.
+   HERO — the split house
+   The old hero was a centred type block beside a portrait frame, over a 1 MB
+   video of the shopfront shot at night through glass: a metal shutter across
+   the top and a third of the frame given to paving stones. It was the weakest
+   photograph on the site and the largest.
 
-   >=1100px : two columns. Type left, video right inside a portrait
-              "shop window" frame capped at 420px — below the video's
-              native 478px, so it is never upscaled and stays sharp.
-   <1100px  : the same video becomes a full-bleed background with a
-              scrim, and the type drops to the lower third, sitting over
-              the pavement area of the frame so the window stays clear.
+   This is a wall and a window instead. Left is limewash stone carrying the
+   type; right is the best photograph in the shop's library, full height, cut
+   off by the edge of the screen the way a doorway cuts a view. The meander
+   runs vertically BETWEEN them — structure, not trim. Nothing is centred and
+   nothing floats.
 ══════════════════════ */
 #hero {
   position: relative;
@@ -254,101 +276,66 @@ video:focus-visible {
   min-height: 100svh;   /* no jump when the mobile URL bar collapses */
   display: grid;
   overflow: hidden;
-  background: var(--ivory);
+  background: var(--stone);
   isolation: isolate;
 }
 
-/* ghost wordmark — main.js writes only --parallax; CSS owns the transform */
-.hero-bg-text {
-  position: absolute;
-  z-index: 0;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(80px, 20vw, 260px);
-  font-weight: 300;
-  letter-spacing: -0.02em;
-  color: transparent;
-  -webkit-text-stroke: 1px var(--gold-light);
-  user-select: none;
-  pointer-events: none;
-  white-space: nowrap;
-  opacity: 0.4;
-  will-change: transform;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, calc(-50% + var(--parallax, 0px)));
-}
-
-/* ── video ── */
-.hero-media {
-  position: relative;
-  background-color: var(--ivory-dark);
-  /* poster doubles as the still shown when the video is hidden or fails.
-     content-box origin keeps it inside the desktop frame's 10px mat. */
-  background-image: url("/media/hero-poster.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-origin: content-box;
-  background-clip: content-box;
-}
-.hero-video {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-@media (prefers-reduced-motion: reduce) {
-  .hero-video { display: none; }   /* the poster background stays */
-}
-
-/* ── type ── */
 .hero-inner {
   position: relative;
   z-index: 2;
-  max-width: min(34rem, 100%);
+  max-width: min(30rem, 100%);
 }
 
 .hero-eyebrow {
   font-size: var(--fs-200);
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: var(--tr-eyebrow);
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--clay);
   margin-bottom: var(--sp-5);
   opacity: 0;
-  animation: fadeUp 0.9s 0.3s forwards;
+  animation: fadeUp 0.9s 0.15s forwards;
 }
 
 .hero-title {
   font-family: 'Cormorant Garamond', serif;
   font-size: var(--fs-display);
   font-weight: 300;
-  line-height: 1;
-  letter-spacing: var(--tr-title);
+  line-height: 0.94;
+  letter-spacing: -0.01em;
   color: var(--charcoal);
   opacity: 0;
-  animation: fadeUp 0.9s 0.5s forwards;
+  animation: fadeUp 0.9s 0.28s forwards;
 }
-.hero-title em { font-style: italic; color: var(--gold); }
+/* the second word carries the accent — clay, not gold. Gold on ivory was the
+   one colour every luxury template already owns. */
+.hero-title em {
+  font-style: italic;
+  color: var(--clay);
+  display: block;
+  margin-left: 0.06em;
+}
 
 .hero-rule {
-  width: 64px;
-  height: 1px;
+  width: 72px;
+  height: 2px;
   background: var(--gold);
-  margin: var(--sp-5) 0 0;
+  margin: var(--sp-6) 0 0;
   opacity: 0;
-  animation: fadeUp 0.9s 0.65s forwards;
+  animation: fadeUp 0.9s 0.4s forwards;
 }
 
 .hero-subtitle {
-  font-size: var(--fs-200);
-  font-weight: 200;
-  letter-spacing: 0.32em;
-  text-transform: uppercase;
-  color: var(--muted);
+  font-size: var(--fs-400);
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  text-transform: none;
+  color: var(--charcoal-soft);
   margin: var(--sp-5) 0 var(--sp-7);
+  max-width: 26ch;
+  line-height: 1.7;
   opacity: 0;
-  animation: fadeUp 0.9s 0.7s forwards;
+  animation: fadeUp 0.9s 0.5s forwards;
 }
 
 .hero-actions {
@@ -356,102 +343,129 @@ video:focus-visible {
   gap: var(--sp-3);
   flex-wrap: wrap;
   opacity: 0;
-  animation: fadeUp 0.9s 0.9s forwards;
+  animation: fadeUp 0.9s 0.62s forwards;
 }
 
+/* Square, flat, ink-on-clay. No rounded corners, no gradient, no shadow —
+   those three are the whole vocabulary of the look he did not want. */
+/* ─── The Greek corner ───
+   A plain rectangle is a plain rectangle in any language. These two corners are
+   cut as a STAIRCASE — the same right-angle turn the meander is built from — so
+   the button belongs to the border that runs across the page instead of just
+   sitting near it. Opposite corners only: cutting all four makes a badge, and
+   the asymmetry is what reads as a key rather than a bevel.
+   The filled button carries it in its fill; the ghost button gets a drawn edge
+   from a pseudo-element, because clip-path cuts a border off at the step. */
 .hero-cta {
+  --step: 7px;
+  clip-path: polygon(
+    calc(var(--step) * 2) 0, 100% 0,
+    100% calc(100% - var(--step) * 2),
+    calc(100% - var(--step)) calc(100% - var(--step) * 2),
+    calc(100% - var(--step)) calc(100% - var(--step)),
+    calc(100% - var(--step) * 2) calc(100% - var(--step)),
+    calc(100% - var(--step) * 2) 100%,
+    0 100%, 0 calc(var(--step) * 2),
+    var(--step) calc(var(--step) * 2),
+    var(--step) var(--step),
+    calc(var(--step) * 2) var(--step)
+  );
   display: inline-block;
   font-size: var(--fs-200);
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: var(--tr-label);
   text-transform: uppercase;
-  color: var(--charcoal);
-  background: var(--gold);
-  border: 1px solid var(--gold);
-  padding: 1rem 2.4rem;
+  color: var(--stone);
+  background: var(--clay);
+  border: 1px solid var(--clay);
+  padding: 1.05rem 2.4rem;
   text-decoration: none;
   transition: background var(--dur-base) var(--ease-out),
               color var(--dur-base) var(--ease-out),
-              transform var(--dur-fast) var(--ease-out);
+              border-color var(--dur-base) var(--ease-out);
 }
-.hero-cta:hover { background: var(--gold-light); border-color: var(--gold-light); transform: translateY(-2px); }
+.hero-cta:hover { background: var(--clay-deep); border-color: var(--clay-deep); color: #fff; }
 
 .hero-cta-ghost {
-  background: transparent;
+  background: var(--stone-deep);
   color: var(--charcoal);
-  border-color: var(--gold);
+  border-color: var(--stone-deep);
 }
-.hero-cta-ghost:hover { background: var(--gold); color: var(--ivory); }
+.hero-cta-ghost:hover { background: var(--charcoal); border-color: var(--charcoal); color: var(--stone); }
 
-/* ── DESKTOP: framed shop window ── */
-@media (min-width: 1100px) {
-  #hero {
-    grid-template-columns: 1fr auto;
-    align-items: center;
-    gap: clamp(2rem, 6vw, 5.5rem);
-    max-width: var(--container-max);
-    margin-inline: auto;
-    padding: calc(var(--nav-h) + var(--sp-8)) var(--gutter) var(--sp-9);
-  }
-  .hero-media {
-    width: min(420px, 32vw);          /* < the 478px native width */
-    aspect-ratio: 478 / 850;
-    border: var(--hairline);
-    padding: 10px;
-    box-shadow: var(--shadow-gold);
-  }
-  /* thin gold corner bracket, echoing .card-corner on the collection cards */
-  .hero-media::before {
-    content: '';
-    position: absolute;
-    top: -9px; right: -9px;
-    width: 46px; height: 46px;
-    border-top: 1px solid var(--gold);
-    border-right: 1px solid var(--gold);
-    pointer-events: none;
-  }
-  .hero-bg-text { left: 34%; opacity: 0.28; }
+/* The photograph. `object-position` is set per breakpoint: this crop has the
+   embroidery in its upper half, so a plain `center` would cut the tassel. */
+.hero-media { position: relative; overflow: hidden; min-height: 0; }
+/* <picture> is an INLINE box. With the <img> inside it taken out of flow, the
+   column had no in-flow content left and collapsed to a zero-height line box —
+   the photograph was loading and painting into nothing. */
+.hero-media picture { display: block; height: 100%; }
+.hero-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 38%;
+  display: block;
 }
 
-/* ── MOBILE / TABLET: full-bleed behind the type ── */
-@media (max-width: 1099px) {
+/* The vertical key. A 18px column of meander, gold on charcoal, standing
+   between the wall and the window like a door jamb. */
+.hero-key {
+  background-color: var(--charcoal);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='40'%3E%3Cpath d='M9,0 V2 H3 V16 H15 V8 H9 V22 H3 V36 H15 V28 H9 V40' fill='none' stroke='%23A07830' stroke-width='1.2'/%3E%3C/svg%3E");
+  background-repeat: repeat-y;
+  background-position: center;
+  background-size: 14px 32px;
+}
+
+/* ── DESKTOP: wall | jamb | window ── */
+@media (min-width: 1000px) {
   #hero {
-    grid-template-columns: minmax(0, 1fr);
-    align-items: end;
-    text-align: center;
-    justify-items: center;
-    padding: calc(var(--nav-h) + var(--sp-6)) var(--gutter) var(--sp-9);
+    /* Proportional, not a fixed max. `minmax(38%, 620px)` resolved to its
+       620px MAX first and left the text column 366px at a 1000px viewport, so
+       the eyebrow wrapped and the two buttons stacked. */
+    grid-template-columns: minmax(0, 1fr) 14px minmax(0, 0.82fr);
+    /* minmax, never a fixed 100svh: a 760px-tall laptop was clipping its own
+       call-to-action buttons off the bottom of the hero. */
+    grid-template-rows: minmax(100svh, auto);
+    align-items: stretch;
   }
-  .hero-media {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    border: 0;
-    padding: 0;
+  .hero-media { height: 100%; }
+  .hero-inner {
+    grid-column: 1;
+    align-self: center;
+    justify-self: end;
+    padding: calc(var(--nav-h) + var(--sp-8)) clamp(2.5rem, 5vw, 5rem) var(--sp-9) var(--gutter);
+    /* 34rem minus the two paddings left ~408px of content, and the two buttons
+       need ~417px once the arrow is on them — they wrapped by nine pixels. */
+    max-width: 40rem;
   }
-  .hero-media::after {           /* scrim — text sits over the pavement */
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg,
-      rgb(var(--charcoal-rgb) / 0.18) 0%,
-      rgb(var(--charcoal-rgb) / 0.30) 42%,
-      rgb(var(--charcoal-rgb) / 0.78) 72%,
-      rgb(var(--charcoal-rgb) / 0.93) 100%);
+  .hero-key   { grid-column: 2; }
+  .hero-media { grid-column: 3; }
+}
+
+/* ── BELOW 1000px: window above, wall below ── */
+@media (max-width: 999px) {
+  #hero {
+    grid-template-rows: 46svh 18px auto;
+    min-height: 0;
   }
-  .hero-bg-text { display: none; }   /* competes with the footage */
-  .hero-inner { align-self: end; width: 100%; max-width: 100%; }
-  /* long letter-spaced caps must be allowed to wrap on a phone */
-  .hero-eyebrow { letter-spacing: 0.22em; line-height: 1.7; }
-  .hero-subtitle { letter-spacing: 0.2em; line-height: 1.7; }
-  .hero-actions { width: 100%; }
-  .hero-cta { flex: 1 1 11rem; }
-  .hero-title { color: var(--ivory); }
-  .hero-subtitle { color: rgb(var(--ivory-rgb) / 0.75); }
-  .hero-rule { margin-inline: auto; }
-  .hero-actions { justify-content: center; }
-  .hero-cta-ghost { color: var(--ivory); border-color: rgb(var(--ivory-rgb) / 0.6); }
-  .hero-cta-ghost:hover { background: var(--ivory); color: var(--charcoal); border-color: var(--ivory); }
+  .hero-media { grid-row: 1; }
+  .hero-photo { object-position: 50% 32%; }
+  .hero-key {
+    grid-row: 2;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='18'%3E%3Cpath d='M0,9 H2 V3 H16 V15 H8 V9 H22 V3 H36 V15 H28 V9 H40' fill='none' stroke='%23C9A84C' stroke-width='1.5'/%3E%3C/svg%3E");
+    background-repeat: repeat-x;
+    background-size: 40px 18px;
+  }
+  .hero-inner {
+    grid-row: 3;
+    max-width: none;
+    padding: var(--sp-8) var(--gutter) var(--sp-9);
+  }
+  .hero-subtitle { max-width: 34ch; }
 }
 
 /* ══════════════════════
@@ -500,7 +514,7 @@ section {
 ══════════════════════ */
 #about {
   display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
   gap: clamp(2.5rem, 7vw, 6rem);
   align-items: center;
   background: var(--ivory);
@@ -533,7 +547,7 @@ section {
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(2.2rem, 4vw, 2.9rem);
   font-weight: 300;
-  color: var(--gold);
+  color: var(--clay);
   line-height: 1;
 }
 
@@ -607,168 +621,149 @@ section {
 }
 
 /* ══════════════════════
-   COLLECTIONS
+   COLLECTIONS — three photographs, hung
+   Was: three equal cards, each with a dark gradient overlay and the caption
+   floating on top of the picture. That overlay-on-photo card is the single most
+   copied component on the web and it costs you the bottom third of every image.
+
+   Now the pictures are simply hung on a dark wall at different heights, and the
+   captions sit UNDER them where a gallery label goes. Nothing covers the
+   clothes.
 ══════════════════════ */
 #collections {
   background: var(--charcoal);
-  padding: var(--section-y) var(--gutter);
+  padding: var(--section-y) var(--gutter) calc(var(--section-y) + 2rem);
 }
+#collections .section-label { color: var(--gold); }
+#collections .section-title { color: var(--stone); }
 #collections > .reveal { max-width: var(--container-max); margin-inline: auto; }
-#collections .section-label { color: var(--gold-light); }
-.collections-title { color: var(--ivory) !important; }
-#collections .gold-line { background: var(--gold); }
 
 .collection-grid {
+  max-width: var(--container-max);
+  margin: var(--sp-10) auto 0;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: var(--sp-5);
-  margin: var(--sp-8) auto 0;
-  max-width: var(--container-max);
+  gap: clamp(1.2rem, 3vw, 2.6rem);
+  align-items: start;
 }
 
 .collection-card {
-  position: relative;
-  display: block;                 /* now a real <a> to the shop, not a div
-                                     that merely showed cursor:pointer */
+  display: block;
   text-decoration: none;
-  color: inherit;
-  aspect-ratio: 3/4;
-  border: 1px solid rgb(var(--gold-rgb) / 0.2);
-  overflow: hidden;
-  background: var(--charcoal);
-  transition: transform var(--dur-base) var(--ease-out),
-              border-color var(--dur-base) var(--ease-out),
-              box-shadow var(--dur-base) var(--ease-out);
+  position: relative;
 }
-@media (hover: hover) {
-  .collection-card:hover {
-    transform: translateY(-6px);
-    border-color: rgb(var(--gold-rgb) / 0.55);
-    box-shadow: var(--shadow-gold);
-  }
-  .collection-card:hover .card-overlay { opacity: 1; }
-  .collection-card:hover .card-img { transform: scale(1.06); }
-  .collection-card:hover .card-corner { opacity: 1; width: 34px; height: 34px; }
-}
+/* A vertical stagger was tried here and dropped. I first blamed it for photos
+   rendering at zero height — that was WRONG: the blank pictures moved around
+   between screenshots, which makes it a capture race in the headless harness,
+   not a layout fault. It came out anyway because an aligned row reads as a
+   gallery wall and needs no explaining. The change that actually mattered is
+   the caption sitting UNDER the picture instead of in a gradient on top of it. */
 
 .card-img {
-  position: absolute;
-  inset: 0;
   width: 100%;
-  height: 100%;
+  /* An explicit height, not `aspect-ratio`. The <img> tags carry width/height
+     ATTRIBUTES which the UA maps to a presentational `height`, and the ratio is
+     only consulted when an axis is auto — the interaction was leaving two of
+     the three pictures at zero height while the third rendered. A fixed band
+     is also simply the right answer for a wall of hung photographs: they crop
+     to the same window and the stagger provides the variety. */
+  height: clamp(300px, 32vw, 460px);
   object-fit: cover;
   display: block;
-  transition: transform var(--dur-slow) var(--ease-out);
+  filter: saturate(0.94);
+  transition: filter var(--dur-slow) var(--ease-out),
+              transform var(--dur-slow) var(--ease-out);
 }
+.collection-card:hover .card-img { filter: saturate(1.04); transform: translateY(-4px); }
 
-.card-overlay {
+/* the gold hairline is the only frame — one line, top edge, drawn on hover */
+.card-corner {
   position: absolute;
-  inset: 0;
-  background: rgb(var(--gold-rgb) / 0.07);
-  opacity: 0;
-  transition: opacity var(--dur-base) var(--ease-out);
-  z-index: 1;
+  top: 0; left: 0;
+  height: 2px;
+  width: 0;
+  background: var(--gold);
+  transition: width var(--dur-slow) var(--ease-out);
 }
+.collection-card:hover .card-corner { width: 100%; }
 
-.card-content {
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  padding: var(--sp-6) var(--sp-5);
-  background: linear-gradient(to top, rgba(10,10,8,0.94) 0%, rgba(10,10,8,0.55) 45%, transparent 100%);
-  z-index: 2;
-}
+.card-content { padding: var(--sp-4) 0 0; }
 .card-title {
   font-family: 'Cormorant Garamond', serif;
   font-size: var(--fs-600);
-  font-weight: 300;
-  color: var(--ivory);
-  margin-bottom: var(--sp-2);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  color: var(--stone);
 }
 .card-sub {
-  font-size: var(--fs-100);
-  letter-spacing: 0.25em;
+  font-size: var(--fs-200);
+  font-weight: 300;
+  letter-spacing: var(--tr-label);
   text-transform: uppercase;
   color: var(--gold);
-}
-
-.card-corner {
-  position: absolute;
-  top: 1rem; right: 1rem;
-  width: 26px; height: 26px;
-  border-top: 1px solid var(--gold);
-  border-right: 1px solid var(--gold);
-  opacity: 0.45;
-  z-index: 2;
-  transition: opacity var(--dur-base) var(--ease-out),
-              width var(--dur-base) var(--ease-out),
-              height var(--dur-base) var(--ease-out);
+  margin-top: var(--sp-2);
 }
 
 /* ══════════════════════
-   SERVICES / PSE NE
+   PSE NE — three statements, not three boxes
+   Was: three bordered cards, each with a small line-art icon above a title.
+   That block is the most template-shaped thing a page can contain, and the
+   owner named it exactly: "jo gjenerike AI".
+
+   A boutique states its terms; it does not put them in boxes. Numbers set in
+   the display serif, a hairline between each, and nothing else.
 ══════════════════════ */
 #services {
-  background: var(--ivory-dark);
-  text-align: center;
+  background: var(--stone);
+  padding: var(--section-y) var(--gutter);
 }
 #services > .reveal { max-width: var(--container-max); margin-inline: auto; }
 
 .services-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--sp-5);
+  max-width: 60rem;
   margin: var(--sp-9) auto 0;
-  max-width: var(--container-max);
+  display: grid;
+  gap: 0;
 }
 
 .service-card {
-  padding: var(--sp-7) var(--sp-6);
-  background: var(--ivory);
-  border: var(--hairline);
-  position: relative;
-  transition: box-shadow var(--dur-base) var(--ease-out),
-              transform var(--dur-base) var(--ease-out),
-              border-color var(--dur-base) var(--ease-out);
-  text-align: left;
+  display: grid;
+  grid-template-columns: minmax(3.5rem, 5rem) 1fr;
+  gap: clamp(1.2rem, 4vw, 3rem);
+  align-items: start;
+  padding: clamp(1.8rem, 4vw, 2.8rem) 0;
+  border-top: 1px solid rgb(var(--charcoal-rgb) / 0.14);
 }
-@media (hover: hover) {
-  .service-card:hover {
-    box-shadow: var(--shadow-gold);
-    transform: translateY(-4px);
-    border-color: var(--gold);
-  }
-  .service-card:hover::after { opacity: 1; }
-}
-.service-card::after {
-  content: '';
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  height: 2px;
-  background: linear-gradient(to right, transparent, var(--gold), transparent);
-  opacity: 0;
-  transition: opacity var(--dur-base) var(--ease-out);
+.service-card:last-child { border-bottom: 1px solid rgb(var(--charcoal-rgb) / 0.14); }
+
+/* the numeral replaces the icon */
+.service-num {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  font-weight: 300;
+  line-height: 0.8;
+  color: var(--clay);
+  font-variant-numeric: lining-nums;
 }
 
-/* SVG icon set — inherits currentColor, so the gold finally applies
-   (it did nothing to the colour emoji these replaced) */
-.service-icon {
-  color: var(--gold);
-  margin-bottom: var(--sp-5);
-  line-height: 0;
-}
-.service-icon svg { display: block; }
 .service-title {
+  grid-column: 2;
   font-family: 'Cormorant Garamond', serif;
-  font-size: var(--fs-600);
+  font-size: var(--fs-700);
   font-weight: 400;
+  letter-spacing: 0.01em;
   color: var(--charcoal);
   margin-bottom: var(--sp-3);
 }
 .service-desc {
-  font-size: var(--fs-400);
+  grid-column: 2;
+  font-size: var(--fs-500);
   font-weight: 300;
   line-height: var(--lh-body);
-  color: var(--muted);
+  color: var(--charcoal-soft);
+  max-width: 54ch;
 }
 
 /* ══════════════════════
@@ -1089,22 +1084,23 @@ footer {
   }
 
   #about {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 3rem;
   }
   .about-frame { aspect-ratio: 4/3; }
   .about-badge { right: 0; bottom: -1rem; }
 
   .collection-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 1.4rem;
   }
-  .collection-card { aspect-ratio: 3/4; }
-
-  .services-grid { grid-template-columns: 1fr; gap: 1.2rem; }
+  /* the stagger is a desktop gesture; at two columns it just looks broken */
+  .collection-card:nth-child(2),
+  .collection-card:nth-child(3) { margin-top: 0; }
+  .collection-card:nth-child(2) { margin-top: 2rem; }
 
   #contact {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 3rem;
   }
 }
@@ -1213,11 +1209,44 @@ footer {
   .hero-subtitle { letter-spacing: 0.16em; }
 
   .collection-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2rem;
   }
-  .collection-card { aspect-ratio: 3/4; }
+  .collection-card:nth-child(2),
+  .collection-card:nth-child(3) { margin-top: 0; }
+  .service-card { grid-template-columns: 2.6rem 1fr; gap: 1rem; }
 
   .about-stat-row { gap: 1.5rem; }
   .stat-number { font-size: 2.2rem; }
 }
+
+/* ─── NAV CTA (after MBC SRL: an action, not just links) ─── */
+.nav-cta {
+  --step: 5px;
+  display: inline-block;
+  padding: 0.62rem 1.25rem;
+  background: var(--clay);
+  color: var(--stone) !important;
+  font-size: var(--fs-100);
+  font-weight: 500;
+  letter-spacing: var(--tr-label);
+  text-transform: uppercase;
+  transition: background var(--dur-base) var(--ease-out);
+  clip-path: polygon(
+    calc(var(--step) * 2) 0, 100% 0,
+    100% calc(100% - var(--step) * 2),
+    calc(100% - var(--step)) calc(100% - var(--step) * 2),
+    calc(100% - var(--step)) calc(100% - var(--step)),
+    calc(100% - var(--step) * 2) calc(100% - var(--step)),
+    calc(100% - var(--step) * 2) 100%,
+    0 100%, 0 calc(var(--step) * 2),
+    var(--step) calc(var(--step) * 2),
+    var(--step) var(--step),
+    calc(var(--step) * 2) var(--step)
+  );
+}
+.nav-cta:hover { background: var(--clay-deep); }
+.nav-links a.nav-cta:hover { color: #fff !important; }
+
+/* the arrow is MBC's too — it says the button goes somewhere */
+.hero-cta::after { content: "→"; margin-left: 0.7em; font-size: 1.05em; line-height: 0; }
