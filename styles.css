@@ -1052,6 +1052,11 @@ footer {
    RESPONSIVE — TABLET (≤900px)
 ══════════════════════ */
 @media (max-width: 900px) {
+  /* First step of the weight ramp described at the 520px breakpoint: by here a
+     section heading is 46px and falling, which is where Cormorant Light starts
+     to look washed rather than fine. The hero is still 83px and stays Light. */
+  .section-title { font-weight: 400; }
+
   #main-nav {
     padding: 0 1.5rem;
   }
@@ -1203,7 +1208,14 @@ footer {
 @media (max-width: 520px) {
   :root { --nav-h: 60px; }
 
-  .hero-title { font-size: clamp(2.6rem, 12vw, 4rem); }
+  /* Weight goes up as the size comes down. Cormorant is a delicate garalde and
+     300 is thin BY DESIGN, which is right at the 104px the desktop hero gets
+     and wrong once a phone has shrunk the same words to 47px and a section
+     heading to 33px, where the stems start to break up. The desktop Light is
+     deliberately untouched: at that size it is doing the editorial job it was
+     chosen for. Both weights are already shipped, so this costs no bytes. */
+  .hero-title { font-size: clamp(2.6rem, 12vw, 4rem); font-weight: 400; }
+  .section-title { font-weight: 500; }
   .hero-cta { padding: 0.9rem 1.2rem; flex: 1 1 9rem; text-align: center; }
   .hero-eyebrow { letter-spacing: 0.18em; }
   .hero-subtitle { letter-spacing: 0.16em; }
